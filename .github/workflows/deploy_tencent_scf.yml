@@ -28,6 +28,10 @@ jobs:
           if [ $QQREAD_BODY ]; then sed -i "/variables/a\      QQREAD_BODY: $QQREAD_BODY" serverless.yml; fi;
           if [ $QQREAD_TIMEURL ]; then sed -i "/variables/a\      QQREAD_TIMEURL: $QQREAD_TIMEURL" serverless.yml; fi;
           if [ $QQREAD_TIMEHD ]; then sed -i "/variables/a\      QQREAD_TIMEHD: $QQREAD_TIMEHD" serverless.yml; fi;
+          if [ $YOUTH_HEADER ]; then sed -i "/variables/a\      YOUTH_HEADER: $YOUTH_HEADER" serverless.yml; fi;
+          if [ $YOUTH_ARTBODY ]; then sed -i "/variables/a\      YOUTH_ARTBODY: $YOUTH_ARTBODY" serverless.yml; fi;
+          if [ $YOUTH_TIME ]; then sed -i "/variables/a\      YOUTH_TIME: $YOUTH_TIME" serverless.yml; fi;
+          if [ $YOUTH_REDBODY ]; then sed -i "/variables/a\      YOUTH_REDBODY: $YOUTH_REDBODY" serverless.yml; fi;
           if [ $JD_COOKIE ]; then sed -i "/variables/a\      JD_COOKIE: $JD_COOKIE" serverless.yml; fi;
           if [ $JD_USER_AGENT ]; then sed -i "/variables/a\      JD_USER_AGENT: $JD_USER_AGENT" serverless.yml; fi;
           if [ $JD_BEAN_STOP ]; then sed -i "/variables/a\      JD_BEAN_STOP: $JD_BEAN_STOP" serverless.yml; fi;
@@ -73,6 +77,10 @@ jobs:
           QQREAD_BODY: ${{ secrets.QQREAD_BODY}}
           QQREAD_TIMEURL: ${{ secrets.QQREAD_TIMEURL}}
           QQREAD_TIMEHD: ${{ secrets.QQREAD_TIMEHD}}
+          YOUTH_HEADER: ${{ secrets.YOUTH_HEADER}}
+          YOUTH_ARTBODY: ${{ secrets.YOUTH_ARTBODY}}
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME}}
+          YOUTH_REDBODY: ${{ secrets.YOUTH_REDBODY}}
           JD_COOKIE: ${{ secrets.JD_COOKIE}}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT}}
           JD_BEAN_STOP: ${{ secrets.JD_BEAN_STOP}}
