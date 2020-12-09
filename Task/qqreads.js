@@ -68,7 +68,10 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 const jsname = "企鹅读书";
 const $ = Env(jsname);
 const notify = $.isNode() ? require("./sendNotify") : "";
-
+//Node.js用户请在jdCookie.js处填写京东ck;
+const qqBodyNode = $.isNode() ? require('./qqBody.js') : '';
+const qqTIMEURLNode = $.isNode() ? require('./qqTIMEURL.js') : '';
+const qqTIMEHDNode = $.isNode() ? require('./qqTIMEHD.js') : '';
 let tz = "";
 let kz = "";
 let task = "";
@@ -94,6 +97,7 @@ let qqreadtimeheaderVal = "";
 let qqreadBD = [];
 let qqreadtimeURL = [];
 let qqreadtimeHD = [];
+/*
 if ($.isNode()) {
   if (process.env.COOKIES_SPLIT) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT;
@@ -130,8 +134,10 @@ if ($.isNode()) {
     qqreadtimeHD = process.env.QQREAD_TIMEHD.split();
   }
 }
+ */
 
 if ($.isNode()) {
+  /*
   Object.keys(qqreadBD).forEach((item) => {
     if (qqreadBD[item]) {
       qqreadbdArr.push(qqreadBD[item]);
@@ -147,7 +153,22 @@ if ($.isNode()) {
       qqreadtimehdArr.push(qqreadtimeHD[item]);
     }
   });
-
+  */
+ Object.keys(qqBodyNode).forEach((item) => {
+  if (qqBodyNode[item]) {
+    qqreadbdArr.push(qqBodyNode[item]);
+  }
+});
+Object.keys(qqTIMEURLNode).forEach((item) => {
+  if (qqTIMEURLNode[item]) {
+    qqreadtimeurlArr.push(qqTIMEURLNode[item]);
+  }
+});
+Object.keys(qqTIMEHDNode).forEach((item) => {
+  if (qqTIMEHDNode[item]) {
+    qqreadtimehdArr.push(qqTIMEHDNode[item]);
+  }
+});
   console.log(
     `============ 共${qqreadtimehdArr.length}个企鹅读书账号  =============\n`
   );
