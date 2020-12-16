@@ -1,3 +1,29 @@
+if ($.isNode()) {
+  if (process.env.YOUTH_HEADER && process.env.YOUTH_HEADER.indexOf('#') > -1) {
+  CookieYouth = process.env.YOUTH_HEADER.split('#');
+  } else {
+      CookieYouth = [process.env.YOUTH_HEADER]
+  };
+  
+  if (process.env.YOUTH_ARTBODY && process.env.YOUTH_ARTBODY.indexOf('&') > -1) {
+  ARTBODYs = process.env.YOUTH_ARTBODY.split('&');
+  } else {
+      ARTBODYs = [process.env.YOUTH_ARTBODY]
+  };
+  
+  if (process.env.YOUTH_REDBODY && process.env.YOUTH_REDBODY.indexOf('&') > -1) {
+  REDBODYs = process.env.YOUTH_REDBODY.split('&');
+  } else {
+      REDBODYs = [process.env.YOUTH_REDBODY]
+  };
+  
+  if (process.env.YOUTH_TIME && process.env.YOUTH_TIME.indexOf('&') > -1) {
+  READTIME = process.env.YOUTH_TIME.split('&');
+  }else {
+      READTIME = [process.env.YOUTH_TIME]
+  };
+}
+
 !(async () => {
     cookiesArr[0] = '{"X-Requested-With":"XMLHttpRequest","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Content-Type":"application/x-www-form-urlencoded","Origin":"https://kd.youth.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Cookie":"Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1590639926,1590639945,1590710195,1590710369; sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2246941219%22%2C%22%24device_id%22%3A%2217259456d9b246-0f78f2156ef00f-724c1251-370944-17259456d9ca65%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%2217259456d9b246-0f78f2156ef00f-724c1251-370944-17259456d9ca65%22%7D; Hm_lpvt_6c30047a5b80400b0fd3f410638b8f0c=1590710297; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1590634422,1590634645,1590639619,1590710297","Host":"kd.youth.cn","Referer":"https://kd.youth.cn/html/taskCenter/index.html?uuid=9c1c323d9dca0db00076cde66b36cd1c&sign=82a01173a0b7162877839b569294d16d&channel_code=80000000&uid=46941219&channel=80000000&access=Wlan&app_version=1.7.8&device_platform=iphone&cookie_id=e86ce763555486845c0143f8b3639b73&openudid=9c1c323d9dca0db00076cde66b36cd1c&device_type=1&device_brand=iphone&sm_device_id=20200528103917b38c817e18f26011cb0ebfb118d673690146f7350f97548a&version_code=178&os_version=13.5&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualIejlq-bz2Kwt32xhoyp4LDPyGl9onqkj3ZqYJa8Y898najWsJupY7K3dWuEsobfsLm2apqGcXY&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualIejlq-bz2Kwt32xhoyp4LDPyGl9onqkj3ZqYJa8Y898najWsJupY7K3dWuEsobfsLm2apqGcXY&cookie_id=e86ce763555486845c0143f8b3639b73","Accept-Language":"zh-cn","Accept":"*/*","Content-Length":"297"}';
     if (!cookiesArr[0]) {
