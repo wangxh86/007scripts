@@ -19,7 +19,7 @@ if (process.env.RRTV_COOKIE) {
     VAL_signcookie = chavy.getdata(KEY_signcookie)   
 }
 
-;(exec = async () => {
+!(async () => {
   chavy.log(`🔔 ${cookieName} 开始签到`)
   await getuid()
   await watch()
