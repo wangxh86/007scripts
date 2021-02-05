@@ -77,7 +77,7 @@ function getuid() {
     chavy.log(`🔔 ${cookieName} 开始签到`)
     return new Promise((resolve, reject) => {
     let url = { url: `https://api.rr.tv/user/profile`, headers: { token: VAL_signcookie } }
-    chavy.log(url)
+    chavy.log(VAL_signcookie)
     url.headers['clientType'] = `web`
     url.headers['clientVersion'] = ``
     chavy.post(url, (error, response, data) => {
