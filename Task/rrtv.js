@@ -24,6 +24,7 @@ if (process.env.RRTV_COOKIE) {
   await getuid()
   await watch()
   await signdaily()
+    chavy.log(`🔔 ${cookieName} 开始签到`)
   await signwelfare()
   if (week == "日") {
     signinfo.canOpenBag = false
