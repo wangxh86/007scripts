@@ -67,7 +67,7 @@ if (process.env.RRTV_COOKIE) {
 })()
 .catch((e) => {
     chavy.log(`❌ ${cookieName} 签到失败: ${e}`)
-    await notify.sendNotify(${cookieName} ,`❌签到失败: ${e}`)
+    notify.sendNotify(${cookieName} ,`❌签到失败: ${e}`)
     })
 .finally(() => chavy.done())
 
