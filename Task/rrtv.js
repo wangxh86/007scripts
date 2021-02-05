@@ -65,7 +65,10 @@ if (process.env.RRTV_COOKIE) {
   await getinfo()
   showmsg()
 })()
-.catch((e) => chavy.log(`❌ ${cookieName} 签到失败: ${e}`))
+.catch((e) => {
+    chavy.log(`❌ ${cookieName} 签到失败: ${e}`))
+    await notify.sendNotify(${cookieName} ,`❌签到失败: ${e}`)
+    }
 .finally(() => chavy.done())
 
 function getuid() {
@@ -385,6 +388,7 @@ function showmsg() {
     }
   }
   chavy.msg(cookieName, subTitle, detail)
+  chavy.log(subTitle + `\n` + detail)
 }
 
 function init() {
