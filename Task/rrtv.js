@@ -11,7 +11,7 @@ let VAL_signcookie = '' ;
 const week = "日一二三四五六".charAt(new Date().getDay())
 
 if (process.env.RRTV_COOKIE) { 
-    VAL_signcookie = str(process.env.RRTV_COOKIE)
+    VAL_signcookie = process.env.RRTV_COOKIE.split().[0]
 chavy.log(VAL_signcookie)
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
