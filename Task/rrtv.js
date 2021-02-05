@@ -1,10 +1,26 @@
+const $ = new Env('新浪微博')
+const notify = $.isNode() ? require('./sendNotify') : '';
+let tokenArr = [],payArr = [],paybag;
+
 const chavy = init()
 const cookieName = '人人视频'
 const KEY_signcookie = 'chavy_cookie_rrtv'
 
 const signinfo = {}
-let VAL_signcookie = chavy.getdata(KEY_signcookie)
+//.let VAL_signcookie = chavy.getdata(KEY_signcookie)
+let VAL_signcookie = '' ;
 const week = "日一二三四五六".charAt(new Date().getDay())
+
+if ($.isNode()) {
+ 
+  VAL_signcookie = process.env.RRTV_COOKIE
+
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ } else {
+    VAL_signcookie = chavy.getdata(KEY_signcookie)
+    
+}
 
 ;(exec = async () => {
   chavy.log(`🔔 ${cookieName} 开始签到`)
