@@ -73,7 +73,8 @@ if (process.env.RRTV_COOKIE) {
 .finally(() => chavy.done())
 
 function getuid() {
-  return new Promise((resolve, reject) => {
+    chavy.log(`🔔 ${cookieName} 开始签到`)
+    return new Promise((resolve, reject) => {
     let url = { url: `https://api.rr.tv/user/profile`, headers: { token: VAL_signcookie } }
     chavy.log(`🔔 ${url} 开始签到`)
     url.headers['clientType'] = `web`
@@ -82,7 +83,7 @@ function getuid() {
       try {
         let obj = JSON.parse(data)
         signinfo.uid = obj.data.user.id
-          chavy.log(`🔔 ${cookieName} 开始签到`)
+        
         resolve()
       } catch (e) {
         chavy.msg(cookieName, `获取会员信息: 失败`, `说明: ${e}`)
