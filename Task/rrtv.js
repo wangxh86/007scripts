@@ -1,4 +1,4 @@
-const $ = new Env('人人视频')
+
 const notify = $.isNode() ? require('./sendNotify') : '';
 
 const chavy = init()
