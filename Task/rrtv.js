@@ -81,8 +81,9 @@ function getuid() {
     url.headers['clientType'] = `web`
     url.headers['clientVersion'] = ``
     chavy.post(url, (error, response, data) => {
-      try {
-        chavy.log(data)
+      chavy.log(data)
+        try {
+        
           let obj = JSON.parse(data)
         signinfo.uid = obj.data.user.id
         
