@@ -1,6 +1,5 @@
-const $ = new Env('新浪微博')
+const $ = new Env('人人视频')
 const notify = $.isNode() ? require('./sendNotify') : '';
-let tokenArr = [],payArr = [],paybag;
 
 const chavy = init()
 const cookieName = '人人视频'
