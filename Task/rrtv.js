@@ -21,6 +21,7 @@ if (process.env.RRTV_COOKIE) {
 
 !(async () => {
   chavy.log(`🔔 ${cookieName} 开始签到`)
+    chavy.log(`🔔 ${cookieName} 开始签到`)
   await getuid()
   await watch()
   await signdaily()
