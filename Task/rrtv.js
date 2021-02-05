@@ -81,6 +81,7 @@ function getuid() {
       try {
         let obj = JSON.parse(data)
         signinfo.uid = obj.data.user.id
+          chavy.log(`🔔 ${cookieName} 开始签到`)
         resolve()
       } catch (e) {
         chavy.msg(cookieName, `获取会员信息: 失败`, `说明: ${e}`)
