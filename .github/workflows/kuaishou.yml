@@ -12,6 +12,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
         KS_TOKEN: ${{ secrets.KS_TOKEN }}
+        KS_TOKEN2: ${{ secrets.KS_TOKEN2 }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
