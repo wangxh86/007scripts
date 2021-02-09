@@ -51,6 +51,9 @@ let cookieArr = [];
 if ($.isNode()) {
   if (process.env.KS_TOKEN && process.env.KS_TOKEN.indexOf('&') > -1) {
       ks_tokens = process.env.KS_TOKEN.split('&');
+  }
+  else if (process.env.KS_TOKEN && process.env.KS_TOKEN.indexOf('\n') > -1) {
+      Drawals = process.env.KS_TOKEN.split('\n');
   } else {
       ks_tokens = process.env.KS_TOKEN.split()
   };
