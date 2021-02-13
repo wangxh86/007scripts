@@ -56,9 +56,9 @@ if (isGetCookie = typeof $request !==`undefined`) {
 } 
 //Secret合集循环方式判定，其中  ZFBWK_BODY   ZFBWK_HEADER   为git仓库中的Secret合集等同于手机js的ck
 if ($.isNode()) {
-  if (process.env.ZFBWK_BODY && process.env.ZFBWK_BODY.indexOf('#') > -1) {
-   wkbody = process.env.ZFBWK_BODY.split('#');
-   console.log(`您选择的是用"#"隔开\n`)
+  if (process.env.ZFBWK_BODY && process.env.ZFBWK_BODY.indexOf('&') > -1) {
+   wkbody = process.env.ZFBWK_BODY.split('&');
+   console.log(`您选择的是用"&"隔开\n`)
   }
   else if (process.env.ZFBWK_BODY && process.env.ZFBWK_BODY.indexOf('\n') > -1) {
    wkbody = process.env.ZFBWK_BODY.split('\n');
@@ -67,8 +67,8 @@ if ($.isNode()) {
    wkbody = process.env.ZFBWK_BODY.split()
   };
   //判定读取Secret合集，赋值于bodyArr与headerArr
-  if (process.env.ZFBWK_HEADER && process.env.ZFBWK_HEADER.indexOf('#') > -1) {
-   wkheader = process.env.ZFBWK_HEADER.split('#');
+  if (process.env.ZFBWK_HEADER && process.env.ZFBWK_HEADER.indexOf('&') > -1) {
+   wkheader = process.env.ZFBWK_HEADER.split('&');
   }
   else if (process.env.ZFBWK_HEADER && process.env.ZFBWK_HEADER.split('\n').length > 0) {
    wkheader = process.env.ZFBWK_HEADER.split('\n');
