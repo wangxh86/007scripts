@@ -104,6 +104,7 @@ if ($.isNode()) {
       headerVal = headerArr[i];
       $.index = i + 1;
       console.log(`\n开始【天天挖矿${$.index}】`)
+	console.log(bodyVal)    
      //await getsign();
  if (headerVal !== undefined){
      await getsy();
