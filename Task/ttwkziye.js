@@ -104,7 +104,7 @@ if ($.isNode()) {
       headerVal = headerArr[i];
       $.index = i + 1;
       console.log(`\n开始【天天挖矿${$.index}】`)
-     await getsign();
+     //await getsign();
  if (headerVal !== undefined){
      await getsy();
     } else {
@@ -194,6 +194,9 @@ function getsy() {
 	  }
      $.post(syurl, async(error, response, data) => {
      let result = JSON.parse(data)
+     if (result.data.hasSign === 'false') {
+	     await getsign()
+     }
      if (result.code == 200){
          wksy = '【挖矿收益】账户总收益:'+result.data.cumulativeMoney/100+`元💰\n【挖矿记录】连续挖矿${result.data.numberInRounds}天,总计挖矿${result.data.cumulativeSignCount}天\n`
          }  
