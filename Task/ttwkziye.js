@@ -194,6 +194,7 @@ function getsy() {
 	  }
      $.post(syurl, async(error, response, data) => {
      let result = JSON.parse(data)
+     console.log(result)
      if (result.data.hasSign === 'false') {
 	     await getsign()
      }
