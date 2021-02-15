@@ -500,7 +500,8 @@ function Addsign() {
      headers: JSON.parse(signheaderVal),
    }
     $.get(url, (error, response, data) => {
-    if(logs)$.log(`额外签到: ${data}\n`)
+    if(logs) $.log(`额外签到: ${data}\n`)
+    $.log(`额外签到: ${data}\n`)  
    })
    resolve()
  })
