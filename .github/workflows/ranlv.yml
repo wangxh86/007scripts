@@ -17,6 +17,7 @@ jobs:
       RUNFILE: "ranlv.js"
       RLURL: ${{ secrets.RLURL }}
       RLHEADER: ${{ secrets.RLHEADER }}
+      RLBODY: ${{ secrets.RLBODY }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
       BARK_PUSH: ${{ secrets.BARK_PUSH }}
       BARK_SOUND: ${{ secrets.BARK_SOUND }}
