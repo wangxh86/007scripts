@@ -15,7 +15,8 @@ jobs:
     env:
       URL: "https://raw.githubusercontent.com/ZhiYi-N/Private_Script/master/Scripts/ranlv.js"
       RUNFILE: "jd_cash.js"
-      JD_COOKIE: ${{ secrets.JD_COOKIE }}
+      RLURL: ${{ secrets.RLURL }}
+      RLHEADER: ${{ secrets.RLHEADER }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
       BARK_PUSH: ${{ secrets.BARK_PUSH }}
       BARK_SOUND: ${{ secrets.BARK_SOUND }}
