@@ -47,4 +47,4 @@ jobs:
       - name: '运行 【燃旅视频】'
         if: env.RLHEADER
         run: |
-          node actions.js
+          node Task/actions.js
