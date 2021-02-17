@@ -228,6 +228,7 @@ let url = {
         try {
            
     const result = JSON.parse(data)
+    console.log(result)
         if(result.code == 200){
         console.log('\n\n蜗牛吧获取个人信息成功\n当前红包余额: '+result.result.balance+'元\n当前金币余额: '+result.result.gold)
 }
@@ -263,6 +264,7 @@ let url = {
         try {
            
     const result = JSON.parse(data)
+      
         if(result.code == 200){
         console.log('\n蜗牛吧领取金币回执:成功🌝 '+result.msg+'芜湖\n')
 }
