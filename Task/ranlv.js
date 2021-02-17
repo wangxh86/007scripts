@@ -204,7 +204,7 @@ let headers = rlheader.replace(/acw_tc=\w+/,'')
         let newvideoid_list = videoid_list[no]
         videoid = newvideoid_list.replace(/"id":/,'')
         console.log('🎈'+result.msg+'\n')
-        message += '🎈'+result.msg+'\n'
+        //message += '🎈'+result.msg+'\n'
         }
         }catch(e) {
           $.logErr(e, response);
@@ -581,7 +581,7 @@ let new_access_token = access_token.replace(/access_token=/,'')
         if(logs) $.log(data)
         if(result.code == 0){
         console.log('🎈投票查询'+result.msg+' 可投票数：'+result.data.votes+'\n')
-        message += '🎈投票查询'+result.msg+' 可投票数：'+result.data.votes+'\n'
+        //message += '🎈投票查询'+result.msg+' 可投票数：'+result.data.votes+'\n'
         let lottery_num = result.data.rate
         if(lottery_num > 0){
         //for(let i = 0; i < lottery_num; i++){
@@ -620,7 +620,7 @@ let url = rlurl.replace(/&video_id=\d{5}/,``)
         let newvideoid_list = videoid_list[num]
         supportvideoid = newvideoid_list.replace(/"id":/,'')
 	    console.log('🎈'+result.msg+'\n')
-        message += '🎈'+result.msg+'\n'
+       // message += '🎈'+result.msg+'\n'
         }else{
         console.log('👀'+result.msg+'\n')
         //message += '👀'+"我也不知道\n"
@@ -648,7 +648,7 @@ let url = rlurl.replace(/\d{5}$/,`${supportvideoid}`)
         if(result.code == 0){
         //await sleep(Math.random()*30000)
 	   console.log('🎈'+result.msg+'\n')
-        message += '🎈'+result.msg+'\n'
+        //message += '🎈'+result.msg+'\n'
         }else{
         console.log('👀'+result.msg+'\n')
         //message += '👀'+"我也不知道\n"
