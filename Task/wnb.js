@@ -249,7 +249,7 @@ if(result.code == 400 || result.code == 411){
 function wnbqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('wnburl') === "undefined") {
+      if (typeof wnburl === "undefined") {
         $.msg($.name,"",'请先获取蜗牛吧数据!😓',)
         $.done()
       }
