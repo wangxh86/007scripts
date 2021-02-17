@@ -116,7 +116,7 @@ if (!wnbhdArr[0] && !wnbbodyArr[0] && !wnburlArr[0]) {
       message = ''
       note =''
       wnburl = wnburlArr[i];
-      wnbheader = wnbheaderArr[i];
+      wnbhd = wnbhdArr[i];
       wnbbody = wnbbodyArr[i];
       $.index = i + 1;
       console.log(`\n开始【蜗牛吧${$.index}】`)
