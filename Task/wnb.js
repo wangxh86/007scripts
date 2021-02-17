@@ -139,7 +139,8 @@ for (let i = 0; i < 5; i++) {
       console.log(`\n蜗牛吧开始执行第${i+1}次领取红包！💦\n等待3秒开始领取下一个红包`)
       await wnbhb();
       await $.wait(3000);
-}await wnbxx();
+}
+await wnbxx();
 //await wnbtj();
 
 
