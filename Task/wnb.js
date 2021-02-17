@@ -140,7 +140,7 @@ for (let i = 0; i < 5; i++) {
       await wnbhb();
       await $.wait(3000);
 }
-await wnbxx();
+  await wnbxx();
 //await wnbtj();
 
 
@@ -236,7 +236,7 @@ if(result.code == 400 || result.code == 411){
         console.log('\n蜗牛吧获取个人信息失败: '+result.msg)}
 
         } catch (e) {
-          //$.logErr(e, resp);
+          $.logErr(e, resp);
         } finally {
           resolve()
         }
