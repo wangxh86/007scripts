@@ -47,10 +47,81 @@ hostname = api.snail2020.com
 
 */
 const $ = new Env('蜗牛吧');
+
+const notify = $.isNode() ?require('./sendNotify') : '';
+
+const wnburlArr = [], wnbhdArr = [],wnbbodyArr = []
+
 let wnburl = $.getdata('wnburl')
 let wnbhd = $.getdata('wnbhd')
 let wnbbody = $.getdata('wnbbody')
+
+var hour=''
+var minute=''
+if ($.isNode()) {
+   hour = new Date( new Date().getTime() + 8 * 60 * 60 * 1000 ).getHours();
+   minute = new Date( new Date().getTime() + 8 * 60 * 60 * 1000 ).getMinutes();
+}else{
+   hour = (new Date()).getHours();
+   minute = (new Date()).getMinutes();
+}
+
+if ($.isNode()) {
+   if (process.env.WNBURL && process.env.WNBURL.indexOf('\n') > -1) {
+   wnburl = process.env.WNBURL.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   wnburl = process.env.WNBURL.split()
+  };
+  if (process.env.WNBHD && process.env.WNBHD.indexOf('\n') > -1) {
+   wnbhd = process.env.WNBHD.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   wnbhd = process.env.WNBHD.split()
+  };
+  if (process.env.WNBBODY && process.env.WNBBODY.indexOf('\n') > -1) {
+   wnbbody = process.env.WNBBODY.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   wnbbody = process.env.WNBBODY.split()
+  };
+  
+  Object.keys(wnburl).forEach((item) => {
+    if (wnburl[item]) {
+      wnburlArr.push(wnburl[item]);
+    }
+  });
+  Object.keys(wnbhd).forEach((item) => {
+    if (wnbhd[item]) {
+      wnbhdArr.push(wnbhd[item]);
+    }
+  });
+  Object.keys(wnbbody).forEach((item) => {
+    if (wnbbody[item]) {
+      wnbbodyArr.push(wnbbody[item]);
+    }
+  });
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ }
 !(async () => {
+if (!wnbhdArr[0] && !wnbbodyArr[0] && !wnburlArr[0]) {
+    $.msg($.name, '【提示】请先获取蜗牛吧一cookie')
+    console.log(`\n【提示】请先获取蜗牛吧一cookie`)
+    return;
+  }
+   console.log(`------------- 共${wnbhdArr.length}个账号----------------\n`)
+  for (let i = 0; i < wnbhdArr.length; i++) {
+    if (wnbhdArr[i]) {
+      message = ''
+      note =''
+      wnburl = wnburlArr[i];
+      wnbheader = wnbheaderArr[i];
+      wnbbody = wnbbodyArr[i];
+      $.index = i + 1;
+      console.log(`\n开始【蜗牛吧${$.index}】`)
+
+
   if (typeof $request !== "undefined") {
       await wnbck()
   } else {
@@ -69,10 +140,12 @@ for (let i = 0; i < 5; i++) {
       await wnbhb();
       await $.wait(3000);
 }await wnbxx();
-await wnbtj();
+//await wnbtj();
 
 
   }
+ }
+}
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
@@ -96,7 +169,7 @@ function wnbhb(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd),
         body :  wnbbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -121,7 +194,7 @@ function wnbtj(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/info/bindInviteUser',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd),
         body :  `inviteMobile=15894440800&countryCode=86
 `,}
       $.post(url, async (err, resp, data) => {
@@ -148,7 +221,7 @@ function wnbxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/assets/getAssets',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd),
         body :  ``,}
       $.get(url, async (err, resp, data) => {
         try {
@@ -182,7 +255,7 @@ function wnbqd(timeout = 0) {
       }
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveAdvGold',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd),
         body : 'os=iOS'
 }
       $.post(url, async (err, resp, data) => {
