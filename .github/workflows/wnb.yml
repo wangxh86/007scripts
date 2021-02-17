@@ -1,4 +1,4 @@
-name: 燃旅视频
+name: 蜗牛吧
 
 on:
   workflow_dispatch:
