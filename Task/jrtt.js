@@ -411,14 +411,14 @@ function reading() {
 const articles = readurl.replace(/\d{3}$/,Math.floor(Math.random()*1000));
 return new Promise((resolve, reject) => {
   let readurl ={
-    url: `https://api5-normal-c-lq.snssdk.com/score_task/v1/task/get_read_bonus/?${articles}`,
+    url: `https://api3-normal-c-lq.snssdk.com/score_task/v1/task/get_read_bonus/?${articles}`,
     headers :JSON.parse(signkey),
       timeout: 60000,
 }
 
    $.post(readurl,(error, response, data) =>{
      try {
-      $.log('阅读响应体:\n'+data)
+     // $.log('阅读响应体:\n'+data)
       const result = JSON.parse(data)
       if(logs)  $.log(data)
       
