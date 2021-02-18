@@ -418,9 +418,10 @@ return new Promise((resolve, reject) => {
 
    $.post(readurl,(error, response, data) =>{
      try {
-     const result = JSON.parse(data)
-      if(logs)  $.log(data)
       $.log('阅读响应体:\n'+data)
+      const result = JSON.parse(data)
+      if(logs)  $.log(data)
+      
       other +='📣文章阅读\n'
       if(result.err_no == 0) {
           other +='阅读完成'
