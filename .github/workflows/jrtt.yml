@@ -52,4 +52,4 @@ jobs:
       - name: '运行 【今日头条极速版】'
         if: env.JRTTSIGNKEY
         run: |
-          node Task/actions.js
+          node Task/jrtt.js
