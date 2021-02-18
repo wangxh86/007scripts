@@ -14,7 +14,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       URL: "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js"
-      RUNFILE: "ranlv.js"
+      RUNFILE: "jrtt.js"
       JRTTSIGNURL: ${{ secrets.JRTTSIGNURL }}
       JRTTSIGNKEY: ${{ secrets.JRTTSIGNKEY }}
       JRTTFARMURL: ${{ secrets.JRTTFARMURL }}
