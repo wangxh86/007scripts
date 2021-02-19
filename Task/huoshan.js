@@ -126,7 +126,7 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
 	
  //自定义部分
 
-if (COOKIE.signkeyVal) {
+if (COOKIE.hsheaderVal) {
   
     hsurlArr = COOKIE.hsurlVal.split('\n');
     hsheaderArr = COOKIE.hsheaderVal.split('\n');
