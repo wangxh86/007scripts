@@ -50,9 +50,9 @@ const $ = Env(jsname)
 const notify = $.isNode() ?require('./sendNotify') : '';
 const COOKIE = $.isNode() ? require("./jrttCOOKIE") : ``;
 $.idx = ($.idx = ($.getval("jrttcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; // 账号扩展字符
-const signurlArr = [],signkeyArr=[]
-const farmurlArr = [],farmkeyArr=[]
-const readurlArr = [],readkeyArr=[]
+let signurlArr = [],signkeyArr=[]
+let farmurlArr = [],farmkeyArr=[]
+let readurlArr = [],readkeyArr=[]
 let signurl = $.getdata('signurl')
 let signkey = $.getdata('signkey')
 
