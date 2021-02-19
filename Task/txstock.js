@@ -573,7 +573,8 @@ async function signtask() {
       url: `https://wzq.tenpay.com/cgi-bin/activity_sign_task.fcgi?actid=2002&action=signdone&date=${signday}&_=${rndtime}&openid=${signheaderVal}`,
       //body: ``,
       headers: {
-        'Cookie': `${taskkeyVal}`,
+        //'Cookie': `${taskkeyVal}`,
+        'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
         'Connection': `keep-alive`,
         'Referer': `https://wzq.tenpay.com/activity/page/welwareCenter/`,
@@ -595,7 +596,7 @@ async function signtask() {
             //问题
             $.log(data)
             data = JSON.parse(data);
-            if (data.retcode == 51091020) {
+            if (data.retcode == 51091020 || data.retcode == 51076001) {
               $.log(`【签到】:${data.retmsg}\n`);
               tz += `【签到】:${data.retmsg}\n`
             } else {
