@@ -502,13 +502,13 @@ function Addsign() {
     $.get(url, (error, response, data) => {
     try {
       if(logs) $.log(`额外签到: ${data}\n`)
-
-   })
-   }catch(e) {
+        }catch(e) {
           $.logErr(e, response);
       } finally {
         resolve();
       } 
+   })
+   
  })
 }
 
