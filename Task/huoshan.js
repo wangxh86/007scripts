@@ -267,7 +267,7 @@ let check_url = 'https://ichannel.snssdk.com/service/2/app_alert_check/?'+iid+'&
    $.get(app_alert_check_url,async(error, response, data) =>{
     try{
         const result = JSON.parse(data)
-        if(logs)$.log(data)
+        if(logs)$.log('🔔模拟启动 '+data)
         message += '🔔模拟启动 '
         console.log(result.message)
         if(result.data.is_activated == 1){
