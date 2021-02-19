@@ -1104,7 +1104,7 @@ function statuid1() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=1&tid=5&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1396,14 +1396,19 @@ function statuid11() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid11 = JSON.parse(data)
       if (statuid11.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1786,7 +1791,7 @@ function statuid3() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=3&tid=9&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1889,7 +1894,7 @@ function taskid4(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=4&id=4&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1902,12 +1907,17 @@ function taskid4(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【点赞评论】:获得 ${task.reward_desc}\n`);
       tz += `【点赞评论】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1916,7 +1926,7 @@ function statuid4() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=4&tid=4&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1929,14 +1939,19 @@ function statuid4() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid4 = JSON.parse(data)
       if (statuid4.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -2019,7 +2034,7 @@ function taskid6(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=13&id=6&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -2046,7 +2061,7 @@ function statuid6() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=6&tid=13&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -2298,7 +2313,7 @@ function taskticket() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskticket&channel=1&actid=1101&_rndtime=${rndtime}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
