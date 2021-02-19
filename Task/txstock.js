@@ -571,7 +571,7 @@ async function signtask() {
   return new Promise((resolve) => {
     let signurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_sign_task.fcgi?actid=2002&action=signdone&date=${signday}&_=${rndtime}&openid=${signheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -899,7 +899,7 @@ async function userhome() {
   return new Promise((resolve) => {
     let signurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_usercenter.fcgi?channel=1&g_openid=${userheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${userkeyVal}`,
         'Accept': `*/*`,
@@ -938,7 +938,7 @@ function taskid2(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=2&id=2&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
