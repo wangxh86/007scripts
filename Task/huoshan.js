@@ -699,7 +699,7 @@ async function showmsg(){
 if(tz==1){
     $.log(message+note)
     if ($.isNode()){
-    if ((hour == 12 && minute <= 20) || (hour == 23 && minute >= 40)) {
+    if (hour == 23 && minute >= 30) {
        await notify.sendNotify($.name,message+note)
      }
    }else{
