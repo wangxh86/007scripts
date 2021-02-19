@@ -519,7 +519,7 @@ let url = rlurl.replace(/\d{5}$/,`${videoid}`)
 async function comment(){
 let url = rlurl.replace(/\d{5}$/,`${videoid}`)
 let newcomment;
-let commentarr = ['%E7%9C%9F%E4%B8%8D%E9%94%99%E5%93%A6','%E7%9C%9F%E5%A5%BD%E5%93%88','%E6%94%AF%E6%8C%81%E4%B8%80%E4%B8%8B','%E8%BF%98%E4%B8%8D%E9%94%99%E5%93%A6','%E6%84%9F%E8%A7%89%E8%BF%98%E5%8F%AF%E4%BB%A5','%E5%8F%AF%E4%BB%A5%E7%9A%84','%E6%84%9F%E8%B0%A2%E5%88%86%E4%BA%AB','%E4%B8%8D%E9%94%99%E5%93%9F','%E6%88%91%E5%96%9C%E6%AC%A2','%E7%9C%9F%E4%BC%98%E7%A7%80','%E6%9C%89%E4%BA%9B%E4%BC%98%E7%A7%80']
+let commentarr = ['%E7%9C%9F%E4%B8%8D%E9%94%99%E5%93%A6','%E6%94%AF%E6%8C%81%E4%B8%80%E4%B8%8B','%E8%BF%98%E4%B8%8D%E9%94%99%E5%93%A6','%E6%84%9F%E8%A7%89%E8%BF%98%E5%8F%AF%E4%BB%A5','%E5%8F%AF%E4%BB%A5%E7%9A%84','%E6%84%9F%E8%B0%A2%E5%88%86%E4%BA%AB','%E4%B8%8D%E9%94%99%E5%93%9F','%E6%88%91%E5%96%9C%E6%AC%A2','%E7%9C%9F%E4%BC%98%E7%A7%80','%E6%9C%89%E4%BA%9B%E4%BC%98%E7%A7%80']
 let x = Math.random()
 let no = Math.round( x < 0.1? ((x+0.1)*9) : (x*9))
 newcomment = commentarr[no]
