@@ -62,7 +62,7 @@ let readurl = $.getdata('readurl')
 let readkey = $.getdata('readkey')
 //var articles =''
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
-const invit=1;//新用户自动邀请，0关闭，1默认开启
+const invit=0;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
 var coins=''
 var article =''
@@ -296,8 +296,8 @@ return new Promise((resolve, reject) => {
           other +='连续签到'+result.data.sign_times+'天\n'
   
 }else{
-          other +='📣首页签到\n'
-          other +='今日已完成签到\n'
+          other +='📣首页签到:已完成\n'
+          //other +='今日已完成签到\n'
            }
           resolve()
     })
@@ -314,7 +314,7 @@ async function control(){
    }
    if(collect == 2){
       //$.log('no opreation')
-      other +='\n\n生前何必久睡，死后自会长眠\n'
+      //other +='\n\n生前何必久睡，死后自会长眠\n'
    }
    if(collect == 3){
       await collectcoins(coins);
@@ -454,7 +454,7 @@ return new Promise((resolve, reject) => {
    $.get(farm_sign_inurl,(error, response, data) =>{
      const result = JSON.parse(data)
        if(logs) $.log(data)
-       other +='📣农场签到\n'
+       other +='📣农场签到: '
       if(result.status_code == 0) {
           other +='签到完成\n'
          
@@ -477,7 +477,7 @@ return new Promise((resolve, reject) => {
    $.post(openboxurl,(error, response, data) =>{
      const result = JSON.parse(data)
        if(logs) $.log(data)
-       other +='📣首页宝箱\n'
+       other +='📣首页宝箱: '
       if(result.err_no == 0) {
         other += '开启成功'
         other += '获得金币'+result.data.score_amount+'个\n'
@@ -506,7 +506,7 @@ return new Promise((resolve, reject) => {
    $.get(openfarmboxurl,(error, response, data) =>{
      const result = JSON.parse(data)
        if(logs) $.log(data)
-       other +='📣农场宝箱\n'
+       other +='📣农场宝箱: '
       if(result.status_code == 0) {
         other += "第"+(5-result.data.box_num)+"开启成功"
         other += "还可以开启"+result.data.box_num+"个\n"
@@ -529,10 +529,10 @@ return new Promise((resolve, reject) => {
    $.get(landwaterurl,(error, response, data) =>{
      const result = JSON.parse(data)
         if(logs)$.log(data)
-       other +='📣农场浇水\n'
+       other +='📣农场浇水: '
       if(result.status_code == '0') {
         other += result.message+'\n'
-        other += '💧水滴剩余'+result.data.water+'\n'
+        //other += '💧水滴剩余'+result.data.water+'\n'
         }
       else{
         other +=result.message+'\n'
@@ -583,7 +583,7 @@ return new Promise((resolve, reject) => {
      const result = JSON.parse(data)
        if(logs)$.log(data)
       if(result.err_no == 0) {
-          other +='📣查询睡觉状态\n🎉查询'+result.err_tips+'\n'
+          //other +='📣查询睡觉状态\n🎉查询'+result.err_tips+'\n'
            }
       if(result.data.sleeping == false){
           other +='当前状态:清醒着呢\n'
