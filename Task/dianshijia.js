@@ -496,7 +496,7 @@ function getGametime() {
 function Addsign() {
   return new Promise((resolve, reject) => {
     let url = { 
-     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=${RewardId}`, 
+     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=45`, 
      headers: JSON.parse(signheaderVal),
    }
     $.get(url, (error, response, data) => {
