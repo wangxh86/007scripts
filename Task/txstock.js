@@ -979,7 +979,7 @@ function statuid2() {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
-      $.log('❗️❗️❗️statuid2: 'data)
+      $.log('❗️❗️❗️statuid2: '+data)
       statuid2 = JSON.parse(data)
       if (statuid2.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
