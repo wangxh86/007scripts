@@ -1085,12 +1085,17 @@ function taskid1(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【阅读资讯】:获得 ${task.reward_desc}\n`);
       tz += `【阅读资讯】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1220,12 +1225,17 @@ function taskid12(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【分享行情】:获得 ${task.reward_desc}\n`);
       tz += `【分享行情】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
