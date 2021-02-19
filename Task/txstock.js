@@ -964,7 +964,7 @@ function statuid2() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&tid=2&id=2&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1257,14 +1257,19 @@ function statuid12() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid12 = JSON.parse(data)
       if (statuid12.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
