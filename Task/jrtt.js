@@ -48,6 +48,7 @@ jrtt = type=cron,cronexp="5,35 8-23 * * *",wake-system=1,script-path=https://raw
 const jsname='今日头条极速版'
 const $ = Env(jsname)
 const notify = $.isNode() ?require('./sendNotify') : '';
+const COOKIE = $.isNode() ? require("./jrttCOOKIE") : ``;
 $.idx = ($.idx = ($.getval("jrttcount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; // 账号扩展字符
 const signurlArr = [],signkeyArr=[]
 const farmurlArr = [],farmkeyArr=[]
@@ -175,6 +176,23 @@ Object.keys(readurl).forEach((item) => {
           readkeyArr.push(readkey[item])
         }
     });
+   
+ //自定义部分
+
+if (COOKIE.signkeyVal) {
+  
+    signurlArr = COOKIE.signurlVal.split('\n');
+   signkeyArr = COOKIE.signkeyVal.split('\n');
+   farmurlArr = COOKIE.farmurlVal.split('\n');
+    farmkeyArr = COOKIE.farmkeyVal.split('\n');
+    readurlArr = COOKIE.readurlVal.split('\n');
+
+  
+    Length = cookieArr.length;
+}
+
+//自定义部分结束
+   
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
