@@ -182,13 +182,12 @@ Object.keys(readurl).forEach((item) => {
 if (COOKIE.signkeyVal) {
   
     signurlArr = COOKIE.signurlVal.split('\n');
-   signkeyArr = COOKIE.signkeyVal.split('\n');
-   farmurlArr = COOKIE.farmurlVal.split('\n');
+    signkeyArr = COOKIE.signkeyVal.split('\n');
+    farmurlArr = COOKIE.farmurlVal.split('\n');
     farmkeyArr = COOKIE.farmkeyVal.split('\n');
     readurlArr = COOKIE.readurlVal.split('\n');
+    readkeyArr = COOKIE.readkeyVal.split('\n');
 
-  
-    Length = cookieArr.length;
 }
 
 //自定义部分结束
