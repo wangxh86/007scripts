@@ -79,35 +79,35 @@ if ($.isNode()) {
    minute = (new Date()).getMinutes();
 }
 
-const userheaderArr = [];
+let userheaderArr = [];
 let userheaderVal = "";
 let USERHEADER = [];
 
-const userkeyArr = [];
+let userkeyArr = [];
 let userkeyVal = "";
 let USERKEY = [];
 
-const cashheaderArr = [];
+let cashheaderArr = [];
 let cashheaderVal = "";
 let CASHHEADER = [];
 
-const signheaderArr = [];
+let signheaderArr = [];
 let signheaderVal = "";
 let SINGHEADER = [];
 
-const signkeyArr = [];
+let signkeyArr = [];
 let signkeyVal = "";
 let SINGKEY = [];
 
-const taskheaderArr = [];
+let taskheaderArr = [];
 let taskheaderVal = "";
 let TASKHEADER = [];
 
-const taskkeyArr = [];
+let taskkeyArr = [];
 let taskkeyVal = "";
 let TASKKEY = [];
 
-const wxtaskkeyArr = [];
+let wxtaskkeyArr = [];
 let wxtaskkeyVal = "";
 let WXTASKKEY = [];
 
