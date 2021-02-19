@@ -33,7 +33,7 @@ const notify = $.isNode() ?require('./sendNotify') : '';
 const COOKIE = $.isNode() ? require("./huoshanCOOKIE") : ``;
 let status;
 status = (status = ($.getval("hsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const hsheaderArr = [],hsbodyArr = [],hsurlArr = [],playurlArr = [],playheaderArr = [],playbodyArr = []
+let hsheaderArr = [],hsbodyArr = [],hsurlArr = [],playurlArr = [],playheaderArr = [],playbodyArr = []
 let playurl = $.getdata('playurl')
 let playheader = $.getdata('playheader')
 let playbody = $.getdata('playbody')
