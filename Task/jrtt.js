@@ -234,7 +234,7 @@ if (!signurlArr[0]) {
       await sign_in()
       await openbox()
       await reading()
-      await farm_sign_in()
+      if (i == 0) await farm_sign_in()
       await openfarmbox()
       await landwarer()
       await double_reward()
