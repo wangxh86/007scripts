@@ -880,7 +880,8 @@ function taskshare(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
         data = JSON.parse(data)
       if (data.retcode == 0) {
         $.log(`【猜涨跌分享】:获得 ${data.reward_desc}\n`);
@@ -890,7 +891,11 @@ function taskshare(ticket) {
         console.log(`任务完成失败，错误信息：${JSON.stringify(data)}\n`)
         tz += `【猜涨跌分享】:${data.retmsg}\n`
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -979,7 +984,7 @@ function statuid2() {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
-      $.log('❗️❗️❗️statuid2: '+data)
+      //$.log('❗️❗️❗️statuid2: '+data)
       statuid2 = JSON.parse(data)
       if (statuid2.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
@@ -1244,7 +1249,7 @@ function statuid12() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=12&tid=22&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1356,7 +1361,7 @@ function taskid11(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=7&id=11&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1369,12 +1374,17 @@ function taskid11(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【分享福利中心】:获得 ${task.reward_desc}\n`);
       tz += `【分享福利中心】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1383,7 +1393,7 @@ function statuid11() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=11&tid=7&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1495,7 +1505,7 @@ function taskid14(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=28&id=14&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1508,12 +1518,17 @@ function taskid14(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【分享资讯】:获得 ${task.reward_desc}\n`);
       tz += `【分享资讯】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1522,7 +1537,7 @@ function statuid14() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=14&tid=28&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1535,14 +1550,19 @@ function statuid14() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid14 = JSON.parse(data)
       if (statuid14.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1629,7 +1649,7 @@ function taskid15(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=29&id=15&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1642,12 +1662,17 @@ function taskid15(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【分享社区帖子】:获得 ${task.reward_desc}\n`);
       tz += `【分享社区帖子】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1656,7 +1681,7 @@ function statuid15() {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskstatus&channel=1&actid=1101&id=15&tid=29&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1669,14 +1694,19 @@ function statuid15() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid15 = JSON.parse(data)
       if (statuid15.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1763,7 +1793,7 @@ function taskid3(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://zqact.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=9&id=3&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `*/*`,
@@ -1776,12 +1806,17 @@ function taskid3(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【猜涨跌】:获得 ${task.reward_desc}\n`);
       tz += `【猜涨跌】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -1804,14 +1839,19 @@ function statuid3() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid3 = JSON.parse(data)
       if (statuid3.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -2047,12 +2087,17 @@ function taskid6(ticket) {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let task = JSON.parse(data)
       $.log(`【模拟炒股】:获得 ${task.reward_desc}\n`);
       tz += `【模拟炒股】:获得 ${task.reward_desc}\n`
       await $.wait(10000); //等待10秒
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -2074,14 +2119,19 @@ function statuid6() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       statuid6 = JSON.parse(data)
       if (statuid6.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
       } else {
         $.log(`验证状态成功,可执行任务🎉`);
       }
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
@@ -2326,14 +2376,19 @@ function taskticket() {
       },
     }
     $.get(testurl, async (error, resp, data) => {
-      if (logs == 1) $.log(data)
+      try {
+       if (logs == 1) $.log(data)
       let test2 = JSON.parse(data)
       $.log(`本次验证时间🕐：` + time(rndtime));
       $.log(`本次验证票据🎫：${test2.task_ticket}`);
       ticket = test2.task_ticket
       //tz += `【现金余额】：¥ ${task.data.activity_money.money}元\n`
 
-      resolve()
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
     })
   })
 }
