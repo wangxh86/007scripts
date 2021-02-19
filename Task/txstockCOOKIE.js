@@ -16,7 +16,7 @@ let taskkeyVal= `pgv_info=ssid=s9855562537; pgv_pvid=5853813260`
 let wxtaskkeyVal= `wzq_channel=fm_wzq_wx_v1_unknow_01..; qlappid=wx9cf8c670ebd68ce4; qlskey=v6474a41e11602f5ba2745f1df1c9c01; qluin=085e9858ef6105427a4552ccb@wx.tenpay.com; qq_logtype=16; wx_session_time=1613716386000; wzq_qlappid=wx9cf8c670ebd68ce4; wzq_qlskey=v6474a41e11602f5ba2745f1df1c9c01; wzq_qluin=os-ppuHDln1oa1RzHrRwd6eNmwNA`
 
 
-let txstockcookie = {
+let cookieArr = {
   userheaderVal: userheaderVal,
   userkeyVal: userkeyVal,
   cashheaderVal: cashheaderVal,
@@ -27,4 +27,4 @@ let txstockcookie = {
   wxtaskkeyVal: wxtaskkeyVal, 
 }
 
-module.exports =  huoshancookie
+module.exports =  cookieArr
