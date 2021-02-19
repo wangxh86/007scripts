@@ -267,14 +267,13 @@ let check_url = 'https://ichannel.snssdk.com/service/2/app_alert_check/?'+iid+'&
    $.get(app_alert_check_url,async(error, response, data) =>{
     try{
         const result = JSON.parse(data)
-        if(logs)$.log('🔔模拟启动 '+data)
-	$.log('🔔模拟启动: '+data)    
-        message += '🔔模拟启动 '
-        console.log(result.message)
-        if(result.data.is_activated == 1){
+        if(logs)$.log('🔔模拟启动 '+data)  
+        message += '🔔模拟启动 🎈'+result.message
+        console.log('🔔模拟启动: '+result.message)
+        /*if(result.data.is_activated == 1){
         console.log('当前状态:活跃\n')
         message += '当前状态:活跃\n'
-        }
+        } */
         }catch(e) {
           $.logErr(e, response);
       } finally {
