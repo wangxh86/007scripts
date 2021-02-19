@@ -30,6 +30,7 @@ http-request /hotsoon/item/reaction/_play/? script-path=https://raw.githubuserco
 const zhiyi = '抖音火山版'
 const $ = Env(zhiyi)
 const notify = $.isNode() ?require('./sendNotify') : '';
+const COOKIE = $.isNode() ? require("./huoshanCOOKIE") : ``;
 let status;
 status = (status = ($.getval("hsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const hsheaderArr = [],hsbodyArr = [],hsurlArr = [],playurlArr = [],playheaderArr = [],playbodyArr = []
@@ -122,6 +123,22 @@ if (process.env.PLAYURL && process.env.PLAYURL.indexOf('#') > -1) {
   } else {
    playbody = process.env.PLAYBODY.split()
   };
+	
+ //自定义部分
+
+if (COOKIE.signkeyVal) {
+  
+    hsurlArr = COOKIE.hsurlVal.split('\n');
+    hsheaderArr = COOKIE.hsheaderVal.split('\n');
+    hsbodyArr = COOKIE.hsbodyVal.split('\n');
+    playurlArr = COOKIE.playurlVal.split('\n');
+    playheaderArr = COOKIE.playheaderVal.split('\n');
+    playbodyArr = COOKIE.playbodyVal.split('\n');
+
+}
+
+//自定义部分结束
+	
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
