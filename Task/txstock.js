@@ -2099,7 +2099,7 @@ function taskid6(ticket) {
       let task = JSON.parse(data)
       if (typeof(task.reward_desc) == 'undefined') {
         $.log(`【模拟炒股】: ${task.retmsg}\n`);
-      tz += `【模拟炒股】: ${task.rretmsg}\n`
+      tz += `【模拟炒股】: ${task.retmsg}\n`
       } else {
       $.log(`【模拟炒股】:获得 ${task.reward_desc}\n`);
       tz += `【模拟炒股】:获得 ${task.reward_desc}\n`
