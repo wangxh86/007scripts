@@ -2095,10 +2095,15 @@ function taskid6(ticket) {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
-      $.log(`【模拟炒股】:`+data)
+      //$.log(`【模拟炒股】:`+data)
       let task = JSON.parse(data)
+      if (task.reward_desc == 'undefined') {
+        $.log(`【模拟炒股】: ${task.retmsg}\n`);
+      tz += `【模拟炒股】: ${task.rretmsg}\n`
+      } else {
       $.log(`【模拟炒股】:获得 ${task.reward_desc}\n`);
       tz += `【模拟炒股】:获得 ${task.reward_desc}\n`
+      }
       await $.wait(10000); //等待10秒
       } catch (e) {
         $.logErr(e, resp);
