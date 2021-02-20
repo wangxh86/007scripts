@@ -623,7 +623,7 @@ function guesstime() {
   return new Promise((resolve) => {
     let url = {
       url: `https://zqact.tenpay.com/cgi-bin/guess_home.fcgi?channel=1&source=2&new_version=2&_=${rndtime}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -1096,6 +1096,7 @@ function taskid1(ticket) {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
+      $.log(`【阅读资讯】:`+data)
       let task = JSON.parse(data)
       $.log(`【阅读资讯】:获得 ${task.reward_desc}\n`);
       tz += `【阅读资讯】:获得 ${task.reward_desc}\n`
@@ -1236,6 +1237,7 @@ function taskid12(ticket) {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
+      $.log(`【分享行情】:`+data)
       let task = JSON.parse(data)
       $.log(`【分享行情】:获得 ${task.reward_desc}\n`);
       tz += `【分享行情】:获得 ${task.reward_desc}\n`
