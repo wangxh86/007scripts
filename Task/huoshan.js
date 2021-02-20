@@ -41,8 +41,8 @@ let hsurl = $.getdata('hsurl')
 let hsheader = $.getdata('hsheader')
 let hsbody = $.getdata('hsbody')
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
-const invite=1;//新用户自动邀请，0关闭，1默认开启
-const logs =0;//0为关闭日志，1为开启
+const invite=0;//新用户自动邀请，0关闭，1默认开启
+const logs =1;//0为关闭日志，1为开启
 var hour=''
 var minute=''
 let item_id,item_id_inv,adtonen,signtoken,double_token;
