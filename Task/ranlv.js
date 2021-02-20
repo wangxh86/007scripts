@@ -170,7 +170,7 @@ let headers = rlheader.replace(/acw_tc=\w+/,'')
         message += '🔔【检测更新】 '
         if(result.code == 0){
         console.log('🎈'+result.msg+' 当前版本:'+result.data.version_code+'\n')
-        message += '🎈'+result.msg+' 当前版本:'+result.data.version_code+'\n'
+        message += '🎈'+' 当前版本:'+result.data.version_code+'\n'
         }
         }catch(e) {
           $.logErr(e, response);
@@ -230,7 +230,7 @@ let headers = rlheader.replace(/acw_tc=\w+/,'')
         myid = result.user.id
         console.log('🎈'+result.msg+' 邀请码：'+result.user.id+' 昵称：'+result.user.nickname+' 燃旅号：'+result.user.ranlvid +'\n')
         console.log('现有余额：'+result.user.balance + '提现额度：'+result.user.lines+'\n')
-        message += '🎈'+result.msg+' 邀请码：'+result.user.id+' 昵称：'+result.user.nickname+' 燃旅号：'+result.user.ranlvid +'现有余额：'+result.user.balance + '提现额度：'+result.user.lines+'\n'
+        message += '🎈'+' 昵称：'+result.user.nickname+'  现有余额：'+result.user.balance + '  提现额度：'+result.user.lines+'\n'
         }else{
         console.log('👀我也不知道\n')
         message += '👀我也不知道\n'
@@ -580,7 +580,7 @@ let new_access_token = access_token.replace(/access_token=/,'')
         if(logs) $.log(data)
         if(result.code == 0){
         console.log('🎈投票查询'+result.msg+' 可投票数：'+result.data.votes+'\n')
-        message += '🎈投票查询'+result.msg+' 可投票数：'+result.data.votes+'\n'
+        message += '🎈'+' 可投票数：'+result.data.votes+'\n'
         let lottery_num = result.data.rate
         if(result.data.votes > 0){
             await mySupport()
