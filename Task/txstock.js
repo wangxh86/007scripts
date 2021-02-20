@@ -666,7 +666,7 @@ function cashticket() {
   return new Promise((resolve) => {
     let url = {
       url: `https://zqact.tenpay.com/cgi-bin/shop.fcgi?action=order_ticket&channel=1&type=2&_=${rndtime}&openid=${cashheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -706,7 +706,7 @@ function getcash1(cashticket) {
   return new Promise((resolve) => {
     let url = {
       url: `https://zqact.tenpay.com/cgi-bin/shop.fcgi?action=order&type=2&channel=1&ticket=${cashticket}&item_id=202003102146152a9e8885&_=${rndtime}&openid=${cashheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -744,7 +744,7 @@ function getcash5(cashticket) {
   return new Promise((resolve) => {
     let url = {
       url: `https://zqact.tenpay.com/cgi-bin/shop.fcgi?action=order&type=2&channel=1&ticket=${cashticket}&item_id=202003102147152ecaa605&_=${rndtime}&openid=${cashheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -783,7 +783,7 @@ function guessop(guessdate) {
   return new Promise((resolve) => {
     let url = {
       url: `https://zqact.tenpay.com/cgi-bin/guess_op.fcgi?action=2&act_id=3&user_answer=1&date=${guessdate}&channel=1&_=${rndtime}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -827,7 +827,7 @@ function guessred() {
   return new Promise((resolve) => {
     let guessredurl = {
       url: `https://zqact.tenpay.com/cgi-bin/activity.fcgi?channel=1&activity=guess_new&guess_act_id=3&guess_date=${signday}&guess_reward_type=1&_=${rndtime}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${signkeyVal}`,
         'Accept': `application/json, text/plain, */*`,
@@ -1081,7 +1081,7 @@ function taskid1(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=5&id=1&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
@@ -1222,7 +1222,7 @@ function taskid12(ticket) {
   return new Promise((resolve, reject) => {
     let testurl = {
       url: `https://wzq.tenpay.com/cgi-bin/activity_task.fcgi?action=taskdone&channel=1&actid=1101&tid=22&id=12&task_ticket=${ticket}&_appName=ios${taskheaderVal}`,
-      body: ``,
+      //body: ``,
       headers: {
         'Cookie': `${taskkeyVal}`,
         'Accept': `*/*`,
