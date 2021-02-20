@@ -1096,7 +1096,7 @@ function taskid1(ticket) {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
-      $.log(`【阅读资讯】:`+data)
+      //$.log(`【阅读资讯】:`+data)
       let task = JSON.parse(data)
       $.log(`【阅读资讯】:获得 ${task.reward_desc}\n`);
       tz += `【阅读资讯】:获得 ${task.reward_desc}\n`
@@ -1237,7 +1237,7 @@ function taskid12(ticket) {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
-      $.log(`【分享行情】:`+data)
+      //$.log(`【分享行情】:`+data)
       let task = JSON.parse(data)
       $.log(`【分享行情】:获得 ${task.reward_desc}\n`);
       tz += `【分享行情】:获得 ${task.reward_desc}\n`
@@ -2095,6 +2095,7 @@ function taskid6(ticket) {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
+      $.log(`【模拟炒股】:`+data)
       let task = JSON.parse(data)
       $.log(`【模拟炒股】:获得 ${task.reward_desc}\n`);
       tz += `【模拟炒股】:获得 ${task.reward_desc}\n`
