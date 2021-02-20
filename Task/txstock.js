@@ -2097,7 +2097,7 @@ function taskid6(ticket) {
        if (logs == 1) $.log(data)
       //$.log(`【模拟炒股】:`+data)
       let task = JSON.parse(data)
-      if (task.reward_desc == 'undefined') {
+      if (typeof(task.reward_desc) == 'undefined') {
         $.log(`【模拟炒股】: ${task.retmsg}\n`);
       tz += `【模拟炒股】: ${task.rretmsg}\n`
       } else {
