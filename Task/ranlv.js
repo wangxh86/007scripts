@@ -615,7 +615,8 @@ let url = rlurl.replace(/&video_id=\d{5}/,``)
    $.post(mySupport_url,async(error, response, data) =>{
     try{
         const result = JSON.parse(data)
-        if(logs) $.log(data)
+        if(logs) $.log('🎈榜单: '+data)
+	$.log(data)
         if(result.code == 0){
         let videoid_list = data.match(/"id":\d{5}/g)
         let idex = Math.random()
