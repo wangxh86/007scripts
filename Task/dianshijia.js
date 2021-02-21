@@ -82,9 +82,9 @@ if ($.isNode()) {
   
    //自定义部分
 
-if (COOKIE.tokenVal) {
+if (COOKIE.DsjurlVal) {
   
-    tokenArr = COOKIE.DsjheadersVal.split('\n');
+    tokenArr = COOKIE.DsjurlVal.split('\n');
     DrawalArr = COOKIE.DrawalVal.split('\n');
 
 
