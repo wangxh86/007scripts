@@ -44,6 +44,7 @@ const gametimes = "1999";  //游戏时长
 const logs = 0   //响应日志开关,默认关闭
 const $ = new Env('电视家')
 const notify = $.isNode() ? require('./sendNotify') : '';
+const COOKIE = $.isNode() ? require("./dianshijiaCOOKIE") : ``;
 let sleeping = "",detail=``,subTitle=``;
 let RewardId = $.getdata('REWARD')||'55'; //额外签到奖励，默认55为兑换0.2元额度，44为兑换1天VIP，42为兑换1888金币
 const dianshijia_API = 'http://api.gaoqingdianshi.com/api'
@@ -78,6 +79,19 @@ if ($.isNode()) {
           DrawalArr.push(Drawals[item])
         }
     });
+  
+   //自定义部分
+
+if (COOKIE.tokenVal) {
+  
+    tokenArr = COOKIE.DsjheadersVal.split('\n');
+    DrawalArr = COOKIE.DrawalVal.split('\n');
+
+
+}
+
+//自定义部分结束
+  
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
