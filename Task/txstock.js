@@ -241,8 +241,12 @@ if (COOKIE.userheaderVal) {
 ///////////////////////////////////////////////////////////////////
 
 !(async () => {
-  await Jsname()
-  O = (`${jsname}执行通知🔔`);
+  
+  if (!taskheaderArr[0]) {
+    console.log($.name, '【提示】请先前往获取任务cookie')
+    return;
+  }
+  /*
   userheaderVal = userheaderArr[0];
   userkeyVal = userkeyArr[0];
   cashheaderVal = cashheaderArr[0];
@@ -251,6 +255,22 @@ if (COOKIE.userheaderVal) {
   taskheaderVal = taskheaderArr[0];
   taskkeyVal = taskkeyArr[0];
   wxtaskkeyVal = wxtaskkeyArr[0];
+  */
+  console.log(`------------- 共${taskheaderArr.length}个账号----------------\n`)
+  for (let i = 0; i < rlheaderArr.length; i++) {
+     userheaderVal = userheaderArr[i];
+  userkeyVal = userkeyArr[i];
+  cashheaderVal = cashheaderArr[i];
+  signheaderVal = signheaderArr[i];
+  signkeyVal = signkeyArr[i];
+  taskheaderVal = taskheaderArr[i];
+  taskkeyVal = taskkeyArr[i];
+  wxtaskkeyVal = wxtaskkeyArr[i];
+   $.index = i + 1;
+   console.log(`\n开始【📈腾讯自选股${$.index}】`)
+   
+  await Jsname()
+  O = (`${jsname}${$.index}执行通知🔔`);
   if((hour == 15 && minute >= 15) || (hour == 16) || (hour == 17) || (hour == 18) || (hour == 19) || (hour == 20) || (hour == 21) || (hour == 22) || (hour == 23)){
     await txstock();
   }else{
@@ -258,6 +278,7 @@ if (COOKIE.userheaderVal) {
     tz += `💖请将定时时间设置到"下午3点15分"之后,\n脚本才会执行\n`
   }
   await showmsg();
+  }
 
 })()
 .catch((e) => $.logErr(e))
@@ -282,10 +303,7 @@ async function txstock(){
   await userhome(); //金币查询
   console.log(`\n✅ 执行【签到】任务\n`)
   await signtask();
-  if (!taskheaderArr[0]) {
-    console.log($.name, '【提示】请先前往获取任务cookie')
-    return;
-  }
+
   console.log(`\n✅ 执行【App】日常任务\n`)
   await task1();
   await task2();
