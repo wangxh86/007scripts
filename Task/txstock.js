@@ -258,7 +258,7 @@ if (COOKIE.userheaderVal) {
   */
   if((hour == 15 && minute >= 15) || (hour == 16) || (hour == 17) || (hour == 18) || (hour == 19) || (hour == 20) || (hour == 21) || (hour == 22) || (hour == 23)){
   console.log(`------------- 共${taskheaderArr.length}个账号----------------\n`)
-  for (let i = 0; i < taskheaderArr.length; i++) {
+  for (let i = 0; i < 1; i++) {
      userheaderVal = userheaderArr[i];
   userkeyVal = userkeyArr[i];
   cashheaderVal = cashheaderArr[i];
@@ -1003,7 +1003,7 @@ async function userhome() {
         } else {
           if (safeGet(data)) {
             money = JSON.parse(data);
-            console.log(money);
+            //console.log(money);
             $.log(`【账户金币】:${money.icon_amount}金币\n`);
             tz += `【账户金币】:${money.icon_amount}金币\n`;
           }
