@@ -1003,6 +1003,7 @@ async function userhome() {
         } else {
           if (safeGet(data)) {
             money = JSON.parse(data);
+            console.log(money);
             $.log(`【账户金币】:${money.icon_amount}金币\n`);
             tz += `【账户金币】:${money.icon_amount}金币\n`;
           }
@@ -1061,7 +1062,7 @@ function statuid2() {
     $.get(testurl, async (error, resp, data) => {
       try {
        if (logs == 1) $.log(data)
-      //$.log('❗️❗️❗️statuid2: '+data)
+      $.log('❗️❗️❗️statuid2: '+data)
       statuid2 = JSON.parse(data)
       if (statuid2.done == 1) {
         $.log(`验证状态失败,任务已执行🚫`);
