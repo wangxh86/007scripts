@@ -256,8 +256,9 @@ if (COOKIE.userheaderVal) {
   taskkeyVal = taskkeyArr[0];
   wxtaskkeyVal = wxtaskkeyArr[0];
   */
+  if((hour == 15 && minute >= 15) || (hour == 16) || (hour == 17) || (hour == 18) || (hour == 19) || (hour == 20) || (hour == 21) || (hour == 22) || (hour == 23)){
   console.log(`------------- 共${taskheaderArr.length}个账号----------------\n`)
-  for (let i = 0; i < rlheaderArr.length; i++) {
+  for (let i = 0; i < taskheaderArr.length; i++) {
      userheaderVal = userheaderArr[i];
   userkeyVal = userkeyArr[i];
   cashheaderVal = cashheaderArr[i];
@@ -271,13 +272,14 @@ if (COOKIE.userheaderVal) {
    
   await Jsname()
   O = (`${jsname}${$.index}执行通知🔔`);
-  if((hour == 15 && minute >= 15) || (hour == 16) || (hour == 17) || (hour == 18) || (hour == 19) || (hour == 20) || (hour == 21) || (hour == 22) || (hour == 23)){
+ 
     await txstock();
+ 
+  await showmsg();
+  }
   }else{
     $.log(`💖请将定时时间设置到"下午3点15分"之后,\n脚本才会执行`);
     tz += `💖请将定时时间设置到"下午3点15分"之后,\n脚本才会执行\n`
-  }
-  await showmsg();
   }
 
 })()
