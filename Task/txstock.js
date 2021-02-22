@@ -118,7 +118,7 @@ if ($.isNode()) {
  
   if (process.env.USERHEADER && process.env.USERHEADER.indexOf('\n') > -1) {
    userheaderVal = process.env.USERHEADER.split('\n');
-   console.log(`USERHEADER您选择的是用"\n"隔开\n`)
+   console.log(`USERHEADER您选择的是用换行隔开\n`)
   }
   else {
   userheaderVal = [process.env.USERHEADER]
@@ -131,7 +131,7 @@ if ($.isNode()) {
   };
   if (process.env.CASHHEADER && process.env.CASHHEADER.indexOf('\n') > -1) {
    cashheaderVal = process.env.CASHHEADER.split('\n');
-   console.log(`CASHHEADER您选择的是用"\n"隔开\n`)
+   console.log(`CASHHEADER您选择的是用换行隔开\n`)
   }
   else {
   cashheaderVal = [process.env.CASHHEADER]
@@ -144,7 +144,7 @@ if ($.isNode()) {
   };
    if (process.env.SIGNKEY && process.env.SIGNKEY.indexOf('\n') > -1) {
    signkeyVal = process.env.SIGNKEY.split('\n');
-   console.log(`SIGNKEY您选择的是用"\n"隔开\n`)
+   console.log(`SIGNKEY您选择的是用换行隔开\n`)
   }
   else {
   signkeyVal = [process.env.SIGNKEY]
@@ -157,7 +157,7 @@ if ($.isNode()) {
   };
   if (process.env.TASKKEY && process.env.TASKKEY.indexOf('\n') > -1) {
    taskkeyVal = process.env.TASKKEY.split('\n');
-   console.log(`TASKKEY您选择的是用"\n"隔开\n`)
+   console.log(`TASKKEY您选择的是用换行隔开\n`)
   }
   else {
   taskkeyVal = [process.env.TASKKEY]
