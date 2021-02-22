@@ -225,6 +225,7 @@ let headers = rlheader.replace(/acw_tc=\w+/,'')
     try{
         const result = JSON.parse(data)
         if(logs) $.log(data)
+	$.log('🔔【用户信息】 '+data)
         message += '🔔【用户信息】 '
         if(result.code == 0){
         myid = result.user.id
