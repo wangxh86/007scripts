@@ -14,9 +14,15 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       URL: "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js"
-      RUNFILE: "jrtt.js"
-      JRTTSIGNURL: ${{ secrets.JRTTSIGNURL }}
-      JRTTSIGNKEY: ${{ secrets.JRTTSIGNKEY }}
+      RUNFILE: "txstock.js"
+      USERHEADER: ${{ secrets.TXS_USERHEADER }}
+      USERKEY: ${{ secrets.TXS_USERKEY }}
+      CASHHEADER: ${{ secrets.TXS_CASHHEADER }}
+      SIGNHEADER: ${{ secrets.TXS_SIGNHEADER }}
+      SIGNKEY: ${{ secrets.TXS_SIGNKEY }}
+      TASKHEADER: ${{ secrets.TXS_TASKHEADER }}
+      TASKKEY: ${{ secrets.TXS_TASKKEY }}
+      WXTASKKEY: ${{ secrets.TXS_WXTASKKEY }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
       BARK_PUSH: ${{ secrets.BARK_PUSH }}
       BARK_SOUND: ${{ secrets.BARK_SOUND }}
