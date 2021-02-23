@@ -46,7 +46,7 @@ const $ = new Env('电视家')
 const notify = $.isNode() ? require('./sendNotify') : '';
 const COOKIE = $.isNode() ? require("./dianshijiaCOOKIE") : ``;
 let sleeping = "",detail=``,subTitle=``;
-let RewardId = $.getdata('REWARD')||'55'; //额外签到奖励，默认55为兑换0.2元额度，44为兑换1天VIP，42为兑换1888金币
+let RewardId = $.getdata('REWARD')||'45'; //额外签到奖励，默认45为兑换0.4元额度，44为兑换1天VIP，42为兑换1888金币
 const dianshijia_API = 'http://api.gaoqingdianshi.com/api'
 let tokenArr = [], DsjurlArr = [], DrawalArr = [],drawalCode="";
 if ($.isNode()) {
@@ -92,8 +92,7 @@ if (COOKIE.DsjurlVal) {
 
 //自定义部分结束
   
-    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
-    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+    console.log(`=== 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()} ===\n`)
  } else {
     tokenArr.push($.getdata('sy_signheader_dsj'))
     DrawalArr.push($.getdata('drawal_dsj'))
@@ -109,7 +108,11 @@ if (isGetCookie = typeof $request !== 'undefined') {
     $.msg($.name, '【提示】请先获取电视家一cookie')
     return;
   }
-    console.log(`------------- 共${tokenArr.length}个账号`)
+  timeZone = new Date().getTimezoneOffset() / 60;
+  timestamp = Date.now()+ (8+timeZone) * 60 * 60 * 1000;
+  bjTime = new Date(timestamp).toLocaleString('zh',{hour12:false,timeZoneName: 'long'});
+  console.log(`\n === 脚本执行-北京时间(UTC+8)：${bjTime} ===\n`);
+  console.log(`------------- 共${tokenArr.length}个账号`);
     if(new Date().getTimezoneOffset()/60 != '-8'&&$.time('HH')<'16'){
         time = new Date(new Date(new Date().toLocaleDateString()).getTime())/1000-28800
        console.log(time)
@@ -511,7 +514,7 @@ function getGametime() {
 function Addsign() {
   return new Promise((resolve, reject) => {
     let url = { 
-     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=45`, 
+     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=${RewardId}`, 
      headers: JSON.parse(signheaderVal),
    }
     $.get(url, (error, response, data) => {
