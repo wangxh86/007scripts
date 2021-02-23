@@ -487,6 +487,7 @@ function Withdrawal() {
     $.get({url: drawalVal, headers: JSON.parse(signheaderVal)}, (error, response, data) => {
      if(logs)$.log(`金币随机兑换 : ${data}\n`)
       let todrawal = JSON.parse(data);
+      $.log(`金币随机兑换 : ${data}\n`);
        if (todrawal.errCode == 0) {
          detail += `【金额提现】✅ 到账`+todrawal.data.price/100+`元 🌷\n`
          drawalCode = todrawal.errCode
