@@ -111,7 +111,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
   timeZone = new Date().getTimezoneOffset() / 60;
   timestamp = Date.now()+ (8+timeZone) * 60 * 60 * 1000;
   bjTime = new Date(timestamp).toLocaleString('zh',{hour12:false,timeZoneName: 'long'});
-  console.log(`\n === 脚本执行-北京时间(UTC+8)：${bjTime} ===\n`);
+  console.log(`\n=== 脚本执行-北京时间(UTC+8)：${bjTime} ===\n`);
   console.log(`------------- 共${tokenArr.length}个账号`);
     if(new Date().getTimezoneOffset()/60 != '-8'&&$.time('HH')<'16'){
         time = new Date(new Date(new Date().toLocaleDateString()).getTime())/1000-28800
