@@ -51,4 +51,4 @@ jobs:
       - name: '运行 【返利网】'
         #if: env.RLHEADER
         run: |
-          node Task/flw.js
+          node Task/actions.js
