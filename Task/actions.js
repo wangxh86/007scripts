@@ -36,7 +36,7 @@ async function start() {
     await changeFiele();
     console.log('替换变量完毕')
     // 执行
-    await exec(`node ${runFile} >> result.txt`);
+    await exec(`node ${runFile} >> Task/result.txt`);
     console.log('执行完毕')
 
     let content = "";
