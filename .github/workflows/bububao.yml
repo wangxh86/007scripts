@@ -14,7 +14,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     env:
       URL: "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js"
-      RUNFILE: "bububao.js"      
+      RUNFILE: "Task/bububao.js"      
       BBB_bububaoTOKEN: ${{ secrets.BBB_bububaoTOKEN }}
       BBB_CASH: ${{ secrets.BBB_CASH }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
