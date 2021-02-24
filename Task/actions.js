@@ -4,11 +4,11 @@ const download = require('download')
 
 // 公共变量
 const URL = process.env.URL
-const path = "./result.txt";
+const path = "./Task/result.txt";
 const runFile = process.env.RUNFILE;
 
 async function downFile() {
-    let file = await download(URL, './')
+    let file = await download(URL, './Task/')
     await fs.writeFileSync(`./${runFile}`, file, 'utf8')
 }
 
