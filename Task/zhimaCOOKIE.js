@@ -11,4 +11,4 @@ let zhimacookie = {
   zhimatxbodyVal: zhimatxbodyVal,  
 }
 
-module.exports =  zhimacooki
+module.exports =  zhimacookie
