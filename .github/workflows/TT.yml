@@ -6,7 +6,7 @@ name: TT语音
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 0 * * *'
+    - cron: '30 23 * * *'
   # watch:
   #       types: started
   # repository_dispatch:
