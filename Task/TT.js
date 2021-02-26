@@ -76,9 +76,9 @@ if ($.isNode()) {
           TTreferArr.push(TTrefer[item])
         }
     });
-  Object.keys(Tbody).forEach((item) => {
-        if (Tbody[item]) {
-          TTbodyArr.push(Tbody[item])
+  Object.keys(TTbody).forEach((item) => {
+        if (TTbody[item]) {
+          TTbodyArr.push(TTbody[item])
         }
     });
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
