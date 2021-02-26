@@ -51,4 +51,4 @@ jobs:
       - name: '运行 【TT语音】'
         #if: env.RLHEADER
         run: |
-          node Task/actions.js
+          node Task/TT.js
