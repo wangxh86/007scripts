@@ -50,4 +50,7 @@ jobs:
       - name: '运行 【QQ阅读APP】'
         #if: env.RLHEADER
         run: |
-          node Task/actions.js
+          node Task/QQread.js
+
+
+
