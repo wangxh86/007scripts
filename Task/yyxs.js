@@ -414,6 +414,7 @@ let url = {
       $.get(url, async (err, resp, data) => {
         try {
          const result = JSON.parse(data)
+	 console.log('\n阅友小说阅读时长上传回执:'+data)
         if (result.code == 0) {
            
         } else {
