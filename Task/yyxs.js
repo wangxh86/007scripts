@@ -273,7 +273,8 @@ Object.keys(yyxscjhd).forEach((item) => {
     await yyxssc();
     await $.wait(100);
     
-    }await yyxsjs();
+    }
+	await yyxsjs();
      await yyxssp();
      await yyxscj();
      await yyxsxx();
@@ -382,6 +383,7 @@ let url = {
         try {
           
     const result = JSON.parse(data)
+    console.log('\n阅友小说视频奖励领取回执:'+data)
         if(result.code == 0){
           console.log('\n阅友小说视频奖励领取回执:成功🌝') 
            await yyxssp();
@@ -414,7 +416,7 @@ let url = {
       $.get(url, async (err, resp, data) => {
         try {
          const result = JSON.parse(data)
-	 console.log('\n阅友小说阅读时长上传回执:'+data)
+	 //console.log('\n阅友小说阅读时长上传回执:'+data)
         if (result.code == 0) {
            
         } else {
