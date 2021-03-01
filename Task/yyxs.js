@@ -197,12 +197,12 @@ Object.keys(yyxsjsurl).forEach((item) => {
           yyxsjsurlArr.push(yyxsjsurl[item])
         }
     });
-    Object.keys(yyxsjsbody).forEach((item) => {
+/*    Object.keys(yyxsjsbody).forEach((item) => {
         if (yyxsjsbody[item]) {
           yyxsjsbodyArr.push(yyxsjsbody[item])
         }
     });	
-
+*/
 Object.keys(yyxsschd).forEach((item) => {
         if (yyxsschd[item]) {
           yyxsschdArr.push(yyxsschd[item])
@@ -259,7 +259,7 @@ Object.keys(yyxscjhd).forEach((item) => {
           yyxssphd = yyxssphdArr[i];
 		yyxsspbody = yyxsspbodyArr[i];
 		yyxsjsurl = yyxsjsurlArr[i];
-		yyxsjsbody = yyxsjsbodyArr[i];
+		//yyxsjsbody = yyxsjsbodyArr[i];
           yyxsscurl = yyxsscurlArr[i];
           yyxsschd = yyxsschdArr[i];
           yyxscjurl = yyxscjurlArr[i];
