@@ -82,6 +82,150 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
     await yyxsck()
    
   } else {
+   if ($.isNode() && process.env.YYXSXXURL) {
+  COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
+  console.log(
+    `============ cookies分隔符为：${JSON.stringify(
+      COOKIES_SPLIT
+    )} =============\n`
+  );
+  if (
+    process.env.YYXSXXURL &&
+    process.env.YYXSXXURL.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsxxurl = process.env.YYXSXXURL.split(COOKIES_SPLIT);
+  } else {
+    yyxsxxurl = process.env.YYXSXXURL.split();
+  }
+  if (
+    process.env.YYXSSPURL &&
+    process.env.YYXSSPURL.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsspurl = process.env.YYXSSPURL.split(COOKIES_SPLIT);
+  } else {
+    yyxsspurl = process.env.YYXSSPURL.split();
+  }
+  if (
+    process.env.YYXSSPHD &&
+    process.env.YYXSSPHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxssphd = process.env.YYXSSPHD.split(COOKIES_SPLIT);
+  } else {
+    yyxssphd = process.env.YYXSSPHD.split();
+  }
+  if (
+    process.env.YYXSSPBODY &&
+    process.env.YYXSSPBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsspbody = process.env.YYXSSPBODY.split(COOKIES_SPLIT);
+  } else {
+    yyxsspbody = process.env.YYXSSPBODY.split();
+  }	
+  if (
+    process.env.YYXSJSURL &&
+    process.env.YYXSJSURL.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsjsurl = process.env.YYXSJSURL.split(COOKIES_SPLIT);
+  } else {
+    yyxsjsurl = process.env.YYXSJSURL.split();
+  }
+  if (
+    process.env.YYXSJSBODY &&
+    process.env.YYXSJSBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsjsbody = process.env.YYXSJSBODY.split(COOKIES_SPLIT);
+  } else {
+    yyxsjsbody = process.env.YYXSJSBODY.split();
+  }
+  if (
+    process.env.YYXSSCURL &&
+    process.env.YYXSSCURL.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsscurl = process.env.YYXSSCURL.split(COOKIES_SPLIT);
+  } else {
+    yyxsscurl = process.env.YYXSSCURL.split();
+  }
+  if (
+    process.env.YYXSSCHD &&
+    process.env.YYXSSCHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxsschd = process.env.YYXSSCHD.split(COOKIES_SPLIT);
+  } else {
+    yyxsschd = process.env.YYXSSCHD.split();
+  }
+  if (
+    process.env.YYXSCJURL &&
+    process.env.YYXSCJURL.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxscjurl = process.env.YYXSCJURL.split(COOKIES_SPLIT);
+  } else {
+    yyxscjurl = process.env.YYXSCJURL.split();
+  }
+  if (
+    process.env.YYXSCJHD &&
+    process.env.YYXSCJHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    yyxscjhd = process.env.YYXSCJHD.split(COOKIES_SPLIT);
+  } else {
+    yyxscjhd = process.env.YYXSCJHD.split();
+  }
+	
+  Object.keys(yyxsxxurl).forEach((item) => {
+        if (yyxsxxurl[item]) {
+          yyxsxxurl.push(yyxsxxurl[item])
+        }
+    });
+    Object.keys(yyxsspurl).forEach((item) => {
+        if (yyxsspurl[item]) {
+          yyxsspurlArr.push(yyxsspurl[item])
+        }
+    });
+
+Object.keys(yyxssphd).forEach((item) => {
+        if (yyxssphd[item]) {
+          yyxssphdArr.push(yyxssphd[item])
+        }
+    });
+    Object.keys(yyxsspbody).forEach((item) => {
+        if (yyxsspbody[item]) {
+          yyxsspbodyArr.push(yyxsspbody[item])
+        }
+    });
+
+Object.keys(yyxsjsurl).forEach((item) => {
+        if (yyxsjsurl[item]) {
+          yyxsjsurlArr.push(yyxsjsurl[item])
+        }
+    });
+    Object.keys(yyxsjsbody).forEach((item) => {
+        if (yyxsjsbody[item]) {
+          yyxsjsbodyArr.push(yyxsjsbody[item])
+        }
+    });	
+
+Object.keys(yyxsschd).forEach((item) => {
+        if (yyxsschd[item]) {
+          yyxsschdArr.push(yyxsschd[item])
+        }
+    });
+    Object.keys(yyxsscurl).forEach((item) => {
+        if (yyxsscurl[item]) {
+          yyxsscurlArr.push(yyxsscurl[item])
+        }
+    });	
+
+Object.keys(yyxscjhd).forEach((item) => {
+        if (yyxscjhd[item]) {
+          yyxscjhdArr.push(yyxscjhd[item])
+        }
+    });
+    Object.keys(yyxscjurl).forEach((item) => {
+        if (yyxscjurl[item]) {
+          yyxscjurlArr.push(yyxscjurl[item])
+        }
+    });	
+  	
+} else {
      yyxsspurlArr.push($.getdata('yyxsspurl'))
      yyxssphdArr.push($.getdata('yyxssphd'))
 	yyxsspbodyArr.push($.getdata('yyxsspbody'))
@@ -105,6 +249,8 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
     yyxscjhdArr.push($.getdata(`yyxscjhd${i}`))
     yyxsxxurlArr.push($.getdata(`yyxsxxurl${i}`))
   }
+} 
+
     console.log(`------------- 共${yyxssphdArr.length}个账号-------------\n`)
       for (let i = 0; i < yyxssphdArr.length; i++) {
         if (yyxssphdArr[i]) {
@@ -134,7 +280,7 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
 
       
   }
-  
+ 
 }}
 
 })()
