@@ -135,7 +135,7 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
   ) {
     yyxsjsbody = process.env.YYXSJSBODY.split(COOKIES_SPLIT);
   } else {
-    yyxsjsbody = process.env.YYXSJSBODY.split();
+    yyxsjsbody = process.env.YYXSJSBODY;
   }
   if (
     process.env.YYXSSCURL &&
