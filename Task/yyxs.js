@@ -340,7 +340,7 @@ function yyxsjs(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : yyxsjsurl,
-        headers : JSON.parse($.getdata('yyxssphd')),
+        headers : JSON.parse(yyxssphd),
         body : 'coins=50'
        
 }      
@@ -370,13 +370,13 @@ let url = {
 function yyxssp(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('yyxssphd') === "undefined") {
+      if (typeof yyxssphd === "undefined") {
         $.msg($.name,"",'请先获取阅友小说数据!😓',)
         $.done()
       }
 let url = {
         url : yyxsspurl,
-        headers : JSON.parse($.getdata('yyxssphd')),
+        headers : JSON.parse(yyxsschd)),
         body : yyxsspbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -407,7 +407,7 @@ function yyxssc(timeout = 0) {
 
 let url = {
         url : yyxsscurl,
-      headers : JSON.parse($.getdata('yyxsschd')),
+      headers : JSON.parse(yyxsschd),
         
        
 }      
@@ -436,7 +436,7 @@ function yyxscj(timeout = 0) {
 
 let url = {
         url : yyxscjurl,
-      headers : JSON.parse($.getdata('yyxscjhd')),
+      headers : JSON.parse(yyxscjhd),
         
        
 }      
@@ -466,7 +466,7 @@ function yyxsxx(timeout = 0) {
 //console.log(yyxsscurl)
 let url = {
         url : yyxsxxurl,
-      headers : JSON.parse($.getdata('yyxssphd')),
+      headers : JSON.parse(yyxssphd),
         body : '',
        
 }      
