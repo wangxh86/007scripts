@@ -51,4 +51,6 @@ jobs:
       - name: '运行 【百度极速版】'
         #if: env.RLHEADER
         run: |
-          node Task/actions.js
+          node Task/baidu_speed.js
+
+
