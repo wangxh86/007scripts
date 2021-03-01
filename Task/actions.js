@@ -8,7 +8,7 @@ const path = "./Task/result.txt";
 const runFile = process.env.RUNFILE;
 
 async function downFile() {
-    let file = await download(URL, './Task/')
+    let file = await download(URL, './')
     await fs.writeFileSync(`./${runFile}`, file, 'utf8')
 }
 
