@@ -376,7 +376,7 @@ function yyxssp(timeout = 0) {
       }
 let url = {
         url : yyxsspurl,
-        headers : JSON.parse(yyxsschd)),
+        headers : JSON.parse(yyxsschd),
         body : yyxsspbody,}
       $.post(url, async (err, resp, data) => {
         try {
