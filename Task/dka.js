@@ -368,7 +368,7 @@ function dkatm(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Index.ashx",
-        headers : JSON.parse($.getdata('dkadthd')),
+        headers : JSON.parse(dkadthd),
         body : dkadtbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -399,7 +399,7 @@ function dkatj(timeout = 0) {
 //$.done()
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Answer.ashx",
-        headers : JSON.parse($.getdata('dkadthd')),
+        headers : JSON.parse(dkadthd),
          body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}",
 }      
       $.post(url, async (err, resp, data) => {
@@ -428,7 +428,7 @@ function dkakkz(timeout = 0) {
 //$.done()
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/MyAccount/FastAd/FastAd_SetImgAdAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkakkzbody,
 }
       $.post(url, async (err, resp, data) => {
@@ -466,7 +466,7 @@ let url2 = dkaxsurl.match(/&userId=(.*?)&bookChannel=/)[1]
 
 let url = {
         url : 'http://www.ipadview.com/rpads/score/award?bookId='+url1+'&chapterId='+jj+++'&userId='+url2+'&bookChannel=1',
-        headers : JSON.parse($.getdata('dkaxshd')),
+        headers : JSON.parse(dkaxshd),
         body : '',}
       $.post(url, async (err, resp, data) => {
         try {
@@ -497,7 +497,7 @@ function dkaxw(timeout = 0) {
 let sjs = Math.floor(Math.random()*899+100); //生成随机数
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/Article/Article_MoneyAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1],}
       $.post(url, async (err, resp, data) => {
         try {
@@ -523,7 +523,7 @@ let url = {
 function dkaqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('dkahd') === "undefined") {
+      if (typeof dkahd === "undefined") {
         $.msg($.name,"",'请先获取蛋咖数据!😓',)
         $.done()
       }
@@ -532,7 +532,7 @@ let fqjs = 1
 
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_SignIn.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkaqdbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -560,7 +560,7 @@ function dkasd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -586,7 +586,7 @@ function dkaqdkkz(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -613,7 +613,7 @@ function dkaxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/BaseData/GetUserInfo.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkabody,}
       $.post(url, async (err, resp, data) => {
         try {
