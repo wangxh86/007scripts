@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-      URL: "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js"
+      URL: "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/bububao.js"
       RUNFILE: "Task/bububao.js"      
       BBB_bububaoTOKEN: ${{ secrets.BBB_bububaoTOKEN }}
       BBB_CASH: ${{ secrets.BBB_CASH }}
@@ -48,6 +48,6 @@ jobs:
       - name: '运行 【步步宝】'
         #if: env.RLHEADER
         run: |
-          node Task/bububao.js
+          node Task/actions.js
 
 
