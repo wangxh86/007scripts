@@ -276,6 +276,7 @@ Object.keys(dkaxwbody).forEach((item) => {
           dkaxwbody = dkaxwbodyArr[i];
           dkabody = dkabodyArr[i];
           dkahd = dkahdArr[i];
+	console.log(dkahd)	
           $.index = i + 1;
           console.log(`\n开始【蛋咖${$.index}】`)
           await dkaqd();
