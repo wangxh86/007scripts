@@ -164,6 +164,7 @@ function signin() {
             headers: JSON.parse(signheaderVal)
         }, async(error, response, data) => {
             if (logs) $.log(`${$.name}, 签到结果: ${data}\n`)
+            $.log(`${$.name}, 签到结果: ${data}\n`)
             let result = JSON.parse(data)
             if (result.errCode == 0) {
                 signinres = `签到成功 `
@@ -195,6 +196,7 @@ function signinfo() {
             headers: JSON.parse(signheaderVal)
         }, (error, response, data) => {
             if (logs) $.log(`${$.name}, 签到信息: ${data}\n`)
+            $.log(`${$.name}, 签到信息: ${data}\n`)
             let result = JSON.parse(data)
             if (result.errCode == 0) {
                 var d = `${result.data.currentDay}`
@@ -522,6 +524,7 @@ function Addsign() {
         }
         $.get(url, (error, response, data) => {
             if (logs) $.log(`额外签到: ${data}\n`)
+            $.log(`额外签到: ${data}\n`)
         })
         resolve()
     })
