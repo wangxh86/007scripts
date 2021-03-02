@@ -198,6 +198,7 @@ function signin() {
       $.get({url: `${dianshijia_API}/v5/sign/signin?accelerate=0&ext=0&ticket=`, headers: JSON.parse(signheaderVal)}, async(error, response, data) =>
        {
       if(logs)$.log(`${$.name}, 签到结果: ${data}\n`)
+      $.log(`${$.name}, 签到结果: ${data}\n`)
       let result = JSON.parse(data)
       if  (result.errCode == 0) 
           { signinres = `签到成功 `
@@ -231,6 +232,7 @@ function signinfo() {
      $.get({ url: `${dianshijia_API}/v4/sign/get`, headers: JSON.parse(signheaderVal)}, (error, response, data) => 
   {
    if(logs)$.log(`${$.name}, 签到信息: ${data}\n`)
+   $.log(`${$.name}, 签到信息: ${data}\n`)
      let result = JSON.parse(data)
      if (result.errCode == 0) 
     {
@@ -520,6 +522,7 @@ function Addsign() {
     $.get(url, (error, response, data) => {
     try {
       if(logs) $.log(`额外签到: ${data}\n`)
+      $.log(`额外签到: ${data}\n`)
         }catch(e) {
           $.logErr(e, response);
       } finally {
