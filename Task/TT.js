@@ -71,6 +71,16 @@ if ($.isNode()) {
   } else {
    TTbody= [process.env.TTBODY]
   };
+  Object.keys(TTrefer).forEach((item) => {
+        if (TTrefer[item]) {
+          TTreferArr.push(TTrefer[item])
+        }
+    });
+  Object.keys(TTbody).forEach((item) => {
+        if (TTbody[item]) {
+          TTbodyArr.push(TTbody[item])
+        }
+    });
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
@@ -82,16 +92,17 @@ if ($.isNode()) {
     TTbodyArr.push($.getdata(`TTbody${i}`))
   }
 }
-console.log(TTreferArr)
+
 !(async () => {
 if (!TTreferArr[0] && !TTbodyArr[0] ) {
     $.msg($.name, '【提示】请先获取TT语音一cookie')
     return;
   }
    console.log(`------------- 共${TTbodyArr.length}个账号----------------\n`)
-  for (let i = 0; i < TTbodyArr.length; i++) {
+   message = ''  
+for (let i = 0; i < TTbodyArr.length; i++) {
     if (TTbodyArr[i]) {
-      message = ''
+     
       TTrefer= TTreferArr[i];
       TTbody = TTbodyArr[i];
       $.index = i + 1;
