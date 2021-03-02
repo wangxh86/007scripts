@@ -15,7 +15,7 @@ jobs:
     env:
       URL: "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js"
       RUNFILE: "Task/bububao.js"      
-      YDZ_YUEDONGZUTOKEN: ${{ secrets.YDZ_YUEDONGZUTOKEN }}
+      YDZ_yuedongzuTOKEN: ${{ secrets.YDZ_YUEDONGZUTOKEN }}
       YDZ_CASH: ${{ secrets.YDZ_CASH }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
       BARK_PUSH: ${{ secrets.BARK_PUSH }}
