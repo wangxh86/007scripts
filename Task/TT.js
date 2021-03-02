@@ -82,6 +82,7 @@ if ($.isNode()) {
     TTbodyArr.push($.getdata(`TTbody${i}`))
   }
 }
+console.log(TTreferArr)
 !(async () => {
 if (!TTreferArr[0] && !TTbodyArr[0] ) {
     $.msg($.name, '【提示】请先获取TT语音一cookie')
