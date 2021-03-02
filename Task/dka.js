@@ -174,7 +174,7 @@ if (
 	
   Object.keys(dkahd).forEach((item) => {
         if (dkahd[item]) {
-          dkahd.push(dkahd[item])
+          dkahdArr.push(dkahd[item])
         }
     });
     Object.keys(dkabody).forEach((item) => {
