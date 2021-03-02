@@ -222,7 +222,7 @@ function total() {
             subTitle = `待兑换金币: ${result.data.coin} `
             try {
                 if (result.data.tempCoin) {
-                    for (k = 0; k < result.data.tempCoin.length; i++) {
+                    for (k = 0; k < result.data.tempCoin.length; k++) {
                         coinid = result.data.tempCoin[k].id
                         $.get({
                             url: `http://api.gaoqingdianshi.com/api/coin/temp/exchange?id=` + coinid,
