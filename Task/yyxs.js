@@ -474,7 +474,6 @@ let url = {
        
 }      
 
-	console.log('\n阅友小说用户信息: '+ url);
       $.post(url, async (err, resp, data) => {
         try {
          const result = JSON.parse(data)
@@ -488,7 +487,7 @@ let url = {
        
        console.log('\n阅友小说用户信息回执:失败🚫 '+msg) 
         }} catch (e) {
-          //$.logErr(e, resp);
+          $.logErr(e, resp);
         } finally {
           resolve()
         }
