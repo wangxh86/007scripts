@@ -209,7 +209,7 @@ function ymzsp(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://ymz.iphonezhuan.com/addaction',
-        headers : JSON.parse($.getdata('ymzhd')),
+        headers : JSON.parse(ymzhd),
         body : ymzbody1,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -237,7 +237,7 @@ function ymztx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://ymz.iphonezhuan.com/submitwithdraw',
-        headers : JSON.parse($.getdata('ymzhd')),
+        headers : JSON.parse(ymzhd),
         body : ymztxbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -262,13 +262,14 @@ if(result.statuscode !== 200){
 function ymzqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('ymzbody') === "undefined"||typeof $.getdata('ymzbody1') === "undefined") {
-        $.msg($.name,"",'请先获取羊毛赚广告和视频body!😓',)
-        $.done()
+      if (typeof ymzbody === "undefined") {
+        $.msg($.name,"",'请先获取羊毛赚广告body!😓',)
+        //$.done()
+	return
       }
 let url = {
         url : 'http://ymz.iphonezhuan.com/addaction',
-        headers : JSON.parse($.getdata('ymzhd')),
+        headers : JSON.parse(ymzhd),
         body : ymzbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -282,7 +283,11 @@ if(result.statuscode == 400 || result.statuscode == 410){
 //await ymzgg() 
 
       console.log(`羊毛赚执行广告任务结束！💦\n等待10秒开始执行视频任务`)
-    
+      if (typeof ymzbody1 === "undefined") {
+        $.msg($.name,"",'请先获取羊毛赚视频body!😓',)
+        //$.done()
+	return
+      }    
 await $.wait(10000);
 await ymzsp()
         } catch (e) {
