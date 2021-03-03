@@ -71,7 +71,7 @@ let ymzurlArr = [], ymzhdArr = [], ymzbodyArr = [], ymzbody1Arr = [], ymztxbodyA
     await ymzck()
    
   } else {
-    if ($.isNode() && process.env.DKAHD) {
+    if ($.isNode()) {
   COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
   console.log(
     `============ cookies分隔符为：${JSON.stringify(
