@@ -270,7 +270,7 @@ Object.keys(yyxscjhd).forEach((item) => {
           $.index = i + 1;
           console.log(`\n开始【阅友小说${$.index}】`)
     
-    /*for (let sc = 1 ; sc < 200 ; sc++) {
+    for (let sc = 1 ; sc < 200 ; sc++) {
     console.log('\n阅友小说阅读时长上传回执:成功🌝 已上传'+sc+'分钟') 
     await yyxssc();
     await $.wait(100);
@@ -278,7 +278,7 @@ Object.keys(yyxscjhd).forEach((item) => {
     }
 	await yyxsjs();
      await yyxssp();
-     await yyxscj();*/
+     await yyxscj();
      await yyxsxx();
 
       
