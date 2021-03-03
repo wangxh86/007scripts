@@ -258,6 +258,7 @@ async function signin() {
           if (safeGet(data)) {
             if (logs == 1) $.log(data)
             data = JSON.parse(data);
+            $.log(`【签到结果】:` + data)
             $.log(`【签到】:成功🎉`);
             $.log(`【步数】:获得${data.data.info.step}👣`);
             $.log(`【健康币】:获得$${data.data.info.jkb}`);
