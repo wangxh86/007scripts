@@ -63,7 +63,8 @@ hostname = *.reader.yueyouxs.com
 
 
 const $ = new Env('阅友小说');
-let status;
+const notify = $.isNode() ? require("./sendNotify") : ``;
+let status, $.message = '';
 status = (status = ($.getval("yyxsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const yyxsspurlArr = [], yyxssphdArr = [],yyxsspbodyArr = [],yyxsjsurlArr = [],yyxsjsbodyArr = [],yyxsscurlArr = [],yyxsschdArr = [],yyxscjurlArr = [],yyxscjhdArr = [],yyxsxxurlArr = [],yyxscount = ''
 let yyxsspurl = $.getdata('yyxsspurl')
@@ -268,21 +269,23 @@ Object.keys(yyxscjhd).forEach((item) => {
           $.index = i + 1;
           console.log(`\n开始【阅友小说${$.index}】`)
     
- /*   for (let sc = 1 ; sc < 200 ; sc++) {
+    /*for (let sc = 1 ; sc < 200 ; sc++) {
     console.log('\n阅友小说阅读时长上传回执:成功🌝 已上传'+sc+'分钟') 
     await yyxssc();
     await $.wait(100);
     
     }
-	await yyxsjs();*/
+	await yyxsjs();
      await yyxssp();
-     await yyxscj();
+     await yyxscj();*/
      await yyxsxx();
 
       
   }
- 
-}}
+
+}
+           
+}
 
 })()
   .catch((e) => $.logErr(e))
@@ -481,7 +484,7 @@ let url = {
         if (result.code == 0) {
          // console.log(data)
           console.log('\n阅友小说用户信息回执:成功🌝 \n\n------------- 当前账号信息 -------------\n用户id:'+result.data.uc.User.id+'\n金币数:'+result.data.uc.User.acctInfo.coins+'个，约等于:'+result.data.uc.User.acctInfo.coins / 10000+'元\n'+result.data.uc.dailyMsg+'\n'+result.data.uc.totalMsg)
-           
+          await notify.sendNotify( `【阅友小说${$.index}】`, '\n用户id:'+result.data.uc.User.id+'\n金币数:'+result.data.uc.User.acctInfo.coins+'个，约等于:'+result.data.uc.User.acctInfo.coins / 10000+'元\n'+result.data.uc.dailyMsg+'\n'+result.data.uc.totalMsg); 
            
         } else {
        
