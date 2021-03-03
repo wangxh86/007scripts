@@ -392,7 +392,7 @@ let url = {
 console.log('\n阅友小说视频奖励领取回执:失败🚫 '+result.msg)
 }
         } catch (e) {
-          //$.logErr(e, resp);
+          $.logErr(e, resp);
         } finally {
           resolve()
         }
