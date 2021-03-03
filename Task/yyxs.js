@@ -381,7 +381,7 @@ let url = {
         body : yyxsspbody,}
       $.post(url, async (err, resp, data) => {
         try {
-     console.log('\n阅友小说视频奖励领取回执:'+data)     
+    
     const result = JSON.parse(data)
     
         if(result.code == 0){
@@ -466,13 +466,12 @@ let url = {
 //阅友小说信息
 function yyxsxx(timeout = 0) {
   return new Promise((resolve) => {
-//console.log(yyxsscurl)
+console.log(yyxsxxurl)
 let url = {
         url : yyxsxxurl,
       headers : JSON.parse(yyxssphd),
-        body : '',
-       
-}      
+        body : ''
+       }      
 
       $.post(url, async (err, resp, data) => {
         try {
