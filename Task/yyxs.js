@@ -377,7 +377,7 @@ function yyxssp(timeout = 0) {
       }
 let url = {
         url : yyxsspurl,
-        headers : JSON.parse(yyxsschd),
+        headers : JSON.parse(yyxssphd),
         body : yyxsspbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -476,7 +476,7 @@ let url = {
 
       $.post(url, async (err, resp, data) => {
         try {
-        console.log('\n阅友小说用户信息回执: '+ data); 
+        console.log(data); 
 	const result = JSON.parse(data)
 	 
         if (result.code == 0) {
