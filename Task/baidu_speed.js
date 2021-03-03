@@ -264,6 +264,9 @@ function TaskCenter() {
         $.logErr(e, data);
       } finally {
         $.msg($.name, $.sub, $.desc)
+         if ($.time("HH") == "22") {
+            await notify.sendNotify($.name, $.sub + $.desc);
+         }
         resolve()
       }
     })
