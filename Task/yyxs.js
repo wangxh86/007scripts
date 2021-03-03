@@ -172,7 +172,7 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
 	
   Object.keys(yyxsxxurl).forEach((item) => {
         if (yyxsxxurl[item]) {
-          yyxsxxurl.push(yyxsxxurl[item])
+          yyxsxxurlArr.push(yyxsxxurl[item])
         }
     });
     Object.keys(yyxsspurl).forEach((item) => {
@@ -466,7 +466,7 @@ let url = {
 //阅友小说信息
 function yyxsxx(timeout = 0) {
   return new Promise((resolve) => {
-console.log(yyxsxxurl)
+//console.log(yyxsxxurl)
 let url = {
         url : yyxsxxurl,
       headers : JSON.parse(yyxssphd),
@@ -475,7 +475,7 @@ let url = {
 
       $.post(url, async (err, resp, data) => {
         try {
-        console.log(data); 
+        //console.log(data); 
 	const result = JSON.parse(data)
 	 
         if (result.code == 0) {
