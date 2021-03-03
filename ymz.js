@@ -65,6 +65,7 @@ let ymzhd = $.getdata('ymzhd')
 let ymzbody = $.getdata('ymzbody')
 let ymzbody1 = $.getdata('ymzbody1')
 let ymztxbody = $.getdata('ymztxbody')
+let ymzurlArr = [], ymzhdArr = [], ymzbodyArr = [], ymzbody1Arr = [], ymztxbodyArr = []
 !(async () => {
   if (typeof $request !== "undefined") {
     await ymzck()
