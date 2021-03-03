@@ -64,7 +64,8 @@ hostname = *.reader.yueyouxs.com
 
 const $ = new Env('阅友小说');
 const notify = $.isNode() ? require("./sendNotify") : ``;
-let status, $.message = '';
+$.message = '';
+let status;
 status = (status = ($.getval("yyxsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const yyxsspurlArr = [], yyxssphdArr = [],yyxsspbodyArr = [],yyxsjsurlArr = [],yyxsjsbodyArr = [],yyxsscurlArr = [],yyxsschdArr = [],yyxscjurlArr = [],yyxscjhdArr = [],yyxsxxurlArr = [],yyxscount = ''
 let yyxsspurl = $.getdata('yyxsspurl')
