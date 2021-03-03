@@ -381,9 +381,9 @@ let url = {
         body : yyxsspbody,}
       $.post(url, async (err, resp, data) => {
         try {
-          
+     console.log('\n阅友小说视频奖励领取回执:'+data)     
     const result = JSON.parse(data)
-    console.log('\n阅友小说视频奖励领取回执:'+data)
+    
         if(result.code == 0){
           console.log('\n阅友小说视频奖励领取回执:成功🌝') 
            await yyxssp();
@@ -476,8 +476,9 @@ let url = {
 
       $.post(url, async (err, resp, data) => {
         try {
-         const result = JSON.parse(data)
-	 console.log('\n阅友小说用户信息回执: '+ data);
+        console.log('\n阅友小说用户信息回执: '+ data); 
+	const result = JSON.parse(data)
+	 
         if (result.code == 0) {
          // console.log(data)
           console.log('\n阅友小说用户信息回执:成功🌝 \n\n------------- 当前账号信息 -------------\n用户id:'+result.data.uc.User.id+'\n金币数:'+result.data.uc.User.acctInfo.coins+'个，约等于:'+result.data.uc.User.acctInfo.coins / 10000+'元\n'+result.data.uc.dailyMsg+'\n'+result.data.uc.totalMsg)
