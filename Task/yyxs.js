@@ -473,6 +473,8 @@ let url = {
         body : '',
        
 }      
+
+	console.log('\n阅友小说用户信息: '+ url);
       $.post(url, async (err, resp, data) => {
         try {
          const result = JSON.parse(data)
