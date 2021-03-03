@@ -124,7 +124,7 @@ function showmsg1() {
 async function showmsg2() {
   if (notifyInterval == 1) {
     if ($.isNode()) {
-      if ((hour == 23 && minute <= 15)) {
+      if ((hour == 23 && minute <= 25)) {
         await notify.sendNotify($.name, tz)
       }
     } else {
