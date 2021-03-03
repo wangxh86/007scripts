@@ -452,7 +452,8 @@ let url = {
            
         } else {
        
-       console.log('\n阅友小说转盘抽奖回执:失败🚫 '+result.msg) 
+       console.log('\n阅友小说转盘抽奖回执:失败🚫 '+result.msg);
+	return;
         }} catch (e) {
           //$.logErr(e, resp);
         } finally {
