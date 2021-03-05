@@ -298,7 +298,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.status == 1){
         console.log('\n悬赏喵喵[喂养]回执:成功🌝 \n成功添加喂养进度'+result.info.percentage+'%\n当前金豆余额:'+result.info.member.currency+' 个\n猫粮剩余:'+result.info.member.foodstuff)
-       if( hour == 12){
+       if( hour == 0){
       notify.sendNotify(O, '[喂养]回执:成功🌝 \n成功添加喂养进度'+result.info.percentage+'%\n当前金豆余额:'+result.info.member.currency+' 个\n猫粮剩余:'+result.info.member.foodstuff)
     }
 } else {
