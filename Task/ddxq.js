@@ -158,6 +158,7 @@ nowTimes = new Date(
           ddxqggurl = ddxqggurlArr[i];
           $.index = i + 1;
           console.log(`\n开始【嘀嗒星球${$.index}】`)
+	  O = (`${$.name + (i + 1)}🔔`);
           await ddxqlb();
 
   }
@@ -209,8 +210,8 @@ let url = {
 } else {
      
 console.log('\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元')
-  if ($.isNode() && (nowTimes.getHours() === 9) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
-      await notify.sendNotify('嘀嗒星球${$.index}', '\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元');
+  if ($.isNode() && (nowTimes.getHours() === 12) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
+      await notify.sendNotify(O, '\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元');
       
 }
    
