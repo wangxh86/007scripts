@@ -515,7 +515,7 @@ function msgShow() {
     if (notifyInterval == 3 && (nowTimes.getHours() === 6 || nowTimes.getHours() === 10 || nowTimes.getHours() === 18 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10)) {
       $.msg($.name, ``, $.message);
     }
-    if (notifyttt == 1 && $.isNode() && (nowTimes.getHours() === 10 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
+    if (notifyttt == 1 && $.isNode() && (nowTimes.getHours() === 14 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
       await notify.sendNotify($.name, $.message);
     resolve()
   })
