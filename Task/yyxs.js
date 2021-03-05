@@ -346,7 +346,7 @@ function yyxsjs(timeout = 0) {
 let url = {
         url : yyxsjsurl,
         headers : JSON.parse(yyxssphd),
-        body : 'coins=50'
+        body : 'coins=3'
        
 }      
       $.post(url, async (err, resp, data) => {
