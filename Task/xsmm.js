@@ -242,7 +242,7 @@ let url = {
 function xsmmlb(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('xsmmhd') === "undefined") {
+      if (typeof xsmmhd === "undefined") {
         $.msg($.name,"",'请先获取悬赏喵喵数据!😓',)
         $.done()
       }
