@@ -264,7 +264,7 @@ function TaskCenter() {
       } catch(e) {
         $.logErr(e, data);
       } finally {
-         $.log("【当前小时： "$.time("HH"))
+         $.log("【当前小时： "+$.time("HH"))
          $.msg($.name, $.sub, $.desc)
          if ($.time("HH") == "20") {
             await notify.sendNotify($.name, $.sub + $.desc);
