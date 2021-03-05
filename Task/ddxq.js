@@ -210,7 +210,7 @@ let url = {
 } else {
      
 console.log('\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元')
-  if ($.isNode() && (nowTimes.getHours() === 12) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
+  if ($.isNode() && (nowTimes.getHours() >= 12) && (nowTimes.getHours() <= 14) )
       await notify.sendNotify(O, '\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元');
       
 }
