@@ -67,6 +67,7 @@ hostname = ddstar.palmmob.com
 const $ = new Env('嘀嗒星球');
 const notify = $.isNode() ? require("./sendNotify") : ``;
 let status;
+$.index = 0;
 status = (status = ($.getval("ddxqstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 let ddxqurlArr = [], ddxqhdArr = [],ddxqggurlArr = [],ddxqcount = ''
 let ddxqurl = $.getdata('ddxqurl')
@@ -208,7 +209,7 @@ let url = {
 } else {
      
 console.log('\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元')
-  if ($.isNode() && (nowTimes.getHours() === 6) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
+  if ($.isNode() && (nowTimes.getHours() === 9) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59))
       await notify.sendNotify('嘀嗒星球${$.index}', '\n嘀嗒星球[红包任务]已运行完毕\n本次运行共获得🧧'+ddxqhb+'元');
       
 }
