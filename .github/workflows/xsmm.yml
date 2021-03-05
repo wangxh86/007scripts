@@ -6,7 +6,7 @@ name: 悬赏喵喵
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 16,22,4,10 * * *'
+    - cron: '10 16,21,2,7,12 * * *'
   # watch:
   #       types: started
   # repository_dispatch:
