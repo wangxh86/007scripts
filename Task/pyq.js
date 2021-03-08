@@ -36,7 +36,7 @@ let pyqad = $.getdata('pyqad')
 let last_id = ($.getdata('last_id') || 1880000)
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=0;//新用户自动邀请，0关闭，1默认开启
-const logs =1;//0为关闭日志，1为开启
+const logs =0;//0为关闭日志，1为开启
 var hour=''
 var minute=''
 var id = ''
@@ -174,8 +174,8 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(qd_url,async(error, response, data) =>{
     try{
-       $.log(data) 
-       const result = JSON.parse('{"data":[],"msg":"\u4eca\u5929\u5df2\u7ecf\u7b7e\u5230","debugMsg":"","code":418,"page":""}')
+       data=data.replace(` ﻿`, ``)	
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log("签到"+result.msg+'\n')
         }catch(e) {
