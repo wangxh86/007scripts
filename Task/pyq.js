@@ -104,7 +104,7 @@ if (!pyqUAArr[0] && !pyqadArr[0]) {
     return;
   }
    console.log(`------------- 共${pyqadArr.length}账号----------------\n`)
-  for (let i = 0; i < pyqadArr.length; i++) {
+  for (let i = 1; i < pyqadArr.length; i++) {
     if (pyqadArr[i]) {
       message = ''
       pyqUA = pyqUAArr[i];
