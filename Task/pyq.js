@@ -174,7 +174,7 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(qd_url,async(error, response, data) =>{
     try{
-       data=data.replace/^.*{/g, ``)
+       data=data.replace(/^.*{/g, ``)
        $.log(data)
        const result = JSON.parse(data)
         if(logs)$.log(data)
