@@ -10,7 +10,7 @@ boxjs：https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/ZhiYi-N.
 目前包含：
 看视频奖励、分享奖励
 点赞视频奖励、评论视频奖励
-榜单投票、榜单抽奖
+榜单投票、榜单抽奖、脱口秀投票
 [mitm]
 hostname = ranlv.lvfacn.com
 #圈x 
@@ -29,13 +29,14 @@ http-request https://ranlv.lvfacn.com/api.php/Common/pvlog script-path=https://r
 const zhiyi = '燃旅视频'
 const $ = Env(zhiyi)
 const notify = $.isNode() ?require('./sendNotify') : '';
-let status, videoid,myid,supportvideoid;
+let status, videoid,myid,supportvideoid,supportrank,show;
 status = (status = ($.getval("rlstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const rlurlArr = [], rlheaderArr = [],rlbodyArr = []
 let rlurl = $.getdata('rlurl')
 let rlheader = $.getdata('rlheader')
 let rlbody = $.getdata('rlbody')
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
+let cash = ($.getval('rlcash') || '0')//默认不自动提现
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
 var hour=''
@@ -130,12 +131,12 @@ if (!rlheaderArr[0] && !rlbodyArr[0] && !rlurlArr[0]) {
       console.log(`\n开始【燃旅视频${$.index}】`)
       await checkVersion()
       await index()
-      await userinfo()
-      await myVotes()
+      await userinfo()      
       await task_center()
-      await wiTask()
-      
+      await myVotes()
+      await wiTask()      
       await showmsg()
+
   }
  }
 })()
@@ -231,6 +232,9 @@ let headers = rlheader.replace(/acw_tc=\w+/,'')
         myid = result.user.id
         console.log('🎈'+result.msg+' 邀请码：'+result.user.id+' 昵称：'+result.user.nickname+' 燃旅号：'+result.user.ranlvid +'\n')
         console.log('现有余额：'+result.user.balance + '提现额度：'+result.user.lines+'\n')
+        if(cash > 0 && Number(result.user.balance) >= cash && Number(result.user.lines) >= Number(result.user.balance)){
+            await wallet()
+            }
         message += '🎈'+' 昵称：'+result.user.nickname+'  现有余额：'+result.user.balance + '  提现额度：'+result.user.lines+'\n'
         }else{
         console.log('👀我也不知道\n')
@@ -266,6 +270,14 @@ let headers = rlheader.replace(/acw_tc=\w+/,'')
         console.log('幸运红包：'+luckyArr.to_num+'/'+luckyArr.num)
         let shareArr = result.data.task.find(item => item.id === 6)
         console.log('分享红包：'+shareArr.to_num+'/'+shareArr.num)
+        let rankArr = result.data.task.find(item => item.id === 11)
+        console.log('榜单红包：'+rankArr.to_num+'/'+rankArr.num)
+        if(rankArr.to_num != rankArr.num){
+        show = 0;
+        }
+        if(rankArr.to_num == rankArr.num){
+        show = 1;
+        }
         if(shareArr.to_num < shareArr.num){
         await share()
         await video_info()
@@ -524,8 +536,6 @@ let commentarr = ['%E7%9C%9F%E4%B8%8D%E9%94%99%E5%93%A6','%E6%94%AF%E6%8C%81%E4%
 let x = Math.random()
 let no = Math.round( x < 0.1? ((x+0.1)*9) : (x*9))
 newcomment = commentarr[no]
-$.log(no)
-$.log(newcomment)
  return new Promise((resolve) => {
     let comment_url = {
    		url: `https://ranlv.lvfacn.com/api.php/Ranlv/addComments?content=${newcomment}&${url}`,
@@ -584,10 +594,15 @@ let new_access_token = access_token.replace(/access_token=/,'')
         message += '🎈'+' 可投票数：'+result.data.votes+'\n'
         let lottery_num = result.data.rate
         if(result.data.votes > 0){
-            await mySupport()
+            if(show == 0){
+                await mySupport()
+            }
+            if(show == 1){
+                await getRank()
+            }
             await goVote()
             await vote_rewards()
-            }
+        }
         if(lottery_num > 0){
         //for(let i = 0; i < lottery_num; i++){
         await lottery()
@@ -738,6 +753,109 @@ let new_access_token = access_token.replace(/access_token=/,'')
       } 
     })
    })
+}
+//getRank
+async function getRank(){
+let url = rlurl.replace(/&video_id=\d{5}/,``)
+    return new Promise((resolve) => {
+    let mySupport_url = {
+            url: `https://ranlv.lvfacn.com/api.php/Rcharts/getRank?&basis=1&id=60&list_rows=12&ran=1&member_id=${myid}&page=1&${url}`,
+        headers: JSON.parse(rlheader),
+        }
+    $.post(mySupport_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs) $.log(data)
+        if(result.code == 0){
+        $.log('榜单投票已完成，开始脱口秀投票')
+        let videoid_list = data.match(/"id":\d{5}/g)
+        let idex = Math.random()
+        let no = Math.round( idex > 0.2 ? ((idex+0.1)*10) : ((idex+0.2)*10))
+        let newvideoid_list = videoid_list[no]
+        supportvideoid = newvideoid_list.replace(/"id":/,'')
+        //console.log('🎈榜单'+result.msg+'\n')
+        //message += '🎈榜单'+result.msg+'\n'
+        }else{
+        console.log('👀'+result.msg+'\n')
+        //message += '👀'+"我也不知道\n"
+        }
+        }catch(e) {
+            $.logErr(e, response);
+        } finally {
+        resolve();
+        } 
+    })
+    })
+}
+//withdraw
+async function withdraw(){
+let url = rlurl.replace(/&video_id=\d{5}/,``)
+    return new Promise((resolve) => {
+    let withdraw_url = {
+            url: `https://ranlv.lvfacn.com/api.php/Share/withdraw?&amount=${cash}&is_act=1&member_id=${myid}&${url}`,
+        headers: JSON.parse(rlheader),
+        }
+    $.post(withdraw_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs) $.log(data)
+        if(result.code == 0){
+        console.log(`成功提现${cash}元\n`)
+        message += `成功提现${cash}元\n`
+        }else{
+        console.log('👀'+result.msg+'\n')
+        }
+        }catch(e) {
+            $.logErr(e, response);
+        } finally {
+        resolve();
+        } 
+    })
+    })
+}
+//wallet
+async function wallet(){
+let url = rlurl.replace(/&video_id=\d{5}/,``)
+    return new Promise((resolve) => {
+    let wallet_url = {
+            url: `https://ranlv.lvfacn.com/api.php/Share/wallet?&&list_rows=1&page=1&type=2&member_id=${myid}&${url}`,
+        headers: JSON.parse(rlheader),
+        }
+    $.post(wallet_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs) $.log(data)
+        if(result.code == 0){
+        let hour,minute,second,year,month,day;
+year = (new Date()).getFullYear();
+month = (new Date()).getMonth() + 1;
+day = (new Date()).getDate();
+if (month >= 1 && month <= 9) {
+            month = "0" + month;
+    }
+if (day >= 0 && day <= 9) {
+            day = "0" + day;
+    }
+hour = (new Date()).getHours();
+minute = (new Date()).getMinutes();
+second = (new Date()).getSeconds();
+let now = Number(year+month+day+hour+minute+second)
+let cashArr = result.data.data.data.find(item => item.description === '提现')
+let create_time = Number(cashArr.serialnum.match(/\d{14}/))
+if(now - create_time >= 1000000){
+$.log(`设置的提现金额为${cash},开始提现\n`)
+await withdraw()
+}
+        }else{
+        console.log('👀'+result.msg+'\n')
+        }
+        }catch(e) {
+            $.logErr(e, response);
+        } finally {
+        resolve();
+        } 
+    })
+    })
 }
 //sleep
 function sleep(time){
