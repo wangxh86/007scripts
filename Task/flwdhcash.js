@@ -534,14 +534,14 @@ async function all() {
             flwheaderVal = FL_COOKIES.flwheaderVal[i];
             flwspbodyVal = FL_COOKIES.flwspbodyVal[i];
             flwqwbodyVal = FL_COOKIES.flwqwbodyVal[i];
-            flwydbodyVal = FL_COOKIES.flwydbodyVal[i];
+            //flwydbodyVal = FL_COOKIES.flwydbodyVal[i];
         }
         if (!COOKIE.flwurlVal) {
             flwurlVal = flwurlArr[i];
             flwheaderVal = flwheaderArr[i];
             flwspbodyVal = flwspbodyArr[i];
             flwqwbodyVal = flwqwbodyArr[i];
-            flwydbodyVal = flwydbodyArr[i];
+            //flwydbodyVal = flwydbodyArr[i];
         }
         flwurlValsplit = flwurlVal.split('&')
         uid = flwurlValsplit[1].split('=')[1]
@@ -563,14 +563,14 @@ async function all() {
         dd = 0;
         O = (`${$.name + (i + 1)}🔔`);
         await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
-        ydBODY = flwydbodyVal.split('&');
+        //ydBODY = flwydbodyVal.split('&');
 
-        if (flwydbodyVal == '') {
+    /*    if (flwydbodyVal == '') {
             ydBODY.length = 0
             tt = 0
         } else tt = ydBODY.length * 1 - 0.5
 
-
+*/
 
         let cookie_is_live = await flwdl(i + 1); //登录
         if (!cookie_is_live) {
