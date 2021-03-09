@@ -278,6 +278,7 @@ ${uid}
     	}
    $.post(comment_url,async(error, response, data) =>{
     try{
+       $.log(data)
        data=data.replace(/^.*{/, `{`) 
        const result = JSON.parse(data)
         if(logs)$.log(data)
@@ -310,6 +311,7 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(comment_list_url,async(error, response, data) =>{
     try{
+       $.log(data)
        data=data.replace(/^.*{/, `{`) 
        const result = JSON.parse(data)
         if(logs)$.log(data)
