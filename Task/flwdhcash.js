@@ -771,6 +771,7 @@ function DH(timeout = 0) {
                     $.DH = JSON.parse(data);
                     if ($.DH.status && $.DH.status == 1) {
                         $.message += '【兑换成功】:' + DHCASH + '元，剩余' + $.DH.data.point + '金币，预估' + $.DH.data.ex_to_cash + '元\n'
+                        $.log(`${O},【兑换成功🚩】:` + DHCASH + '元，剩余' + $.DH.data.point + '金币，预估' + $.DH.data.ex_to_cash + '元\n');
                     } else $.message += '【兑换失败】:' + $.DH.info + '\n'
                 } catch (e) {
                     $.logErr(e, resp);
