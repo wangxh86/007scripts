@@ -736,10 +736,9 @@ function DHlist(timeout = 0) {
                         wu = $.DHlist.data.rewards.find(item => item.sort === "31");
                         wushi = $.DHlist.data.rewards.find(item => item.sort === "30");
                         yibai = $.DHlist.data.rewards.find(item => item.sort === "29");
-                       $.message += '【' + wu.title + '】:库存' + wu.stock + '份\n'  
-                       $.log('【' + wu.title + '】:库存' + wu.stock + '份\n'); 
-                      if (wu && wu.stock >= 5) {
+                      if (wu && wu.stock >= 1) {
                             $.message += '【' + wu.title + '】:库存' + wu.stock + '份\n'
+                          $.log('【' + wu.title + '】:库存' + wu.stock + '份\n'); 
                         }
                         if (wushi) {
                             $.message += '【' + wushi.title + '】:库存' + wushi.stock + '份\n'
