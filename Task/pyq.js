@@ -280,6 +280,7 @@ ${uid}
     try{
        $.log(data)
        data=data.replace(/^.*{/, `{`) 
+       $.log(data)
        const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log(result.msg+'\n')
@@ -313,6 +314,7 @@ let uid = pyqad.match(/\d{6}/)
     try{
        $.log(data)
        data=data.replace(/^.*{/, `{`) 
+       $.log(data)
        const result = JSON.parse(data)
         if(logs)$.log(data)
         let commentArr = result.list.find(item => item.uid == uid)
