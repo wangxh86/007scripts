@@ -223,7 +223,7 @@ $.log('点赞图文id为：'+id)
   } 
 //tp_d
 async function tp_d(){
-$.log('取消点赞id为：'+last_id)
+$.log('取消点赞id为：'+id)
 let uid = pyqad.match(/\d{6}/)
  return new Promise((resolve) => {
     let tp_d_url = {
@@ -237,7 +237,7 @@ let uid = pyqad.match(/\d{6}/)
           "Host": "pingyouquan.com",
           "User-Agent": `${pyqUA}`
           },
-        body: `{"pid":${last_id},"uid":${uid},"type":1}`
+        body: `{"pid":${id},"uid":${uid},"type":1}`
     	}
    $.post(tp_d_url,async(error, response, data) =>{
     try{
