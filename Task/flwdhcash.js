@@ -737,6 +737,7 @@ function DHlist(timeout = 0) {
                         wushi = $.DHlist.data.rewards.find(item => item.sort === "30");
                         yibai = $.DHlist.data.rewards.find(item => item.sort === "29");
                        $.message += '【' + wu.title + '】:库存' + wu.stock + '份\n'  
+                       $.log('【' + wu.title + '】:库存' + wu.stock + '份\n'); 
                       if (wu && wu.stock >= 5) {
                             $.message += '【' + wu.title + '】:库存' + wu.stock + '份\n'
                         }
