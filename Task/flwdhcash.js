@@ -205,7 +205,7 @@ if (!COOKIE.flwurlVal) {
         flwheaderArr.push($.getdata("flwheader"));
         flwspbodyArr.push($.getdata("flwspbody"));
         flwqwbodyArr.push($.getdata("flwqwbody"));
-        flwydbodyArr.push($.getdata("flwydbody"));
+       // flwydbodyArr.push($.getdata("flwydbody"));
         // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
         if ("flwCASH") {
             CASH = $.getval("flwCASH") || '0';
@@ -220,7 +220,7 @@ if (!COOKIE.flwurlVal) {
                 flwheaderArr.push($.getdata(`flwheader${i}`));
                 flwspbodyArr.push($.getdata(`flwspbody${i}`));
                 flwqwbodyArr.push($.getdata(`flwqwbody${i}`));
-                flwydbodyArr.push($.getdata(`flwydbody${i}`));
+                //flwydbodyArr.push($.getdata(`flwydbody${i}`));
             }
         }
     }
