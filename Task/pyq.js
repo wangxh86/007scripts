@@ -140,7 +140,7 @@ $.setdata(`${id}`,'last_id')
 let index = Math.round(Math.random()*10)
 text = texts[index]
 await qd()
-/*
+
 await $.wait(10000)
 await tp_d()
 await $.wait(10000)
@@ -153,7 +153,7 @@ await $.wait(10000)
 await fx()
 await $.wait(10000)
 await ad()
-*/
+
 }
 //qd
 async function qd(){
@@ -209,7 +209,8 @@ $.log('点赞图文id为：'+id)
     	}
    $.post(tp_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log(result.msg+'\n')
         }catch(e) {
@@ -240,7 +241,8 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(tp_d_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log(result.msg+'\n')
         }catch(e) {
@@ -276,7 +278,8 @@ ${uid}
     	}
    $.post(comment_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log(result.msg+'\n')
         }catch(e) {
@@ -307,7 +310,8 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(comment_list_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         let commentArr = result.list.find(item => item.uid == uid)
         commentid = commentArr.id
@@ -342,7 +346,8 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(commentdel_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log('评论'+result.msg+'\n')
         }catch(e) {
@@ -372,7 +377,8 @@ let uid = pyqad.match(/\d{6}/)
     	}
    $.post(fx_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log('分享'+result.msg+'\n')
         }catch(e) {
@@ -401,7 +407,8 @@ async function ad(){
     	}
    $.post(ad_url,async(error, response, data) =>{
     try{
-        const result = JSON.parse(data)
+       data=data.replace(/^.*{/g, `{`) 
+       const result = JSON.parse(data)
         if(logs)$.log(data)
         console.log('广告'+result.msg+'\n')
         }catch(e) {
