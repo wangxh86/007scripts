@@ -731,7 +731,7 @@ function DHlist(timeout = 0) {
             $.get(url, async (err, resp, data) => {
                 try {
                     if (logs) $.log(`${O}, 兑换目录🚩: ${data}`);
-                    $.log(`${O}, 兑换目录🚩: ${data}`);
+                    //$.log(`${O}, 兑换目录🚩: ${data}`);
                     $.DHlist = JSON.parse(data);
                     if ($.DHlist.status && $.DHlist.status == 1) {
                         wu = $.DHlist.data.rewards.find(item => item.sort === "31");
