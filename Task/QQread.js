@@ -321,6 +321,7 @@ function user(timeout = 0) {
       $.get(url, async (err, resp, data) => {
         try {
           if (logs) $.log(`${O}, 用户信息🚩: ${data}`);
+          $.log(`${O}, 用户信息🚩: ${data}`);
           $.user = JSON.parse(data);
           if ($.user.code == 0) {
             console.log(`\n${O}\n========== 【${$.user.nick}】 ==========\n`);
@@ -371,6 +372,7 @@ function signindex(timeout = 0) {
       $.get(url, async (err, resp, data) => {
         try {
           if (logs) $.log(`${O}, 签到查询🚩: ${data}`);
+          $.log(`${O}, 签到查询🚩: ${data}`);
           $.signindex = JSON.parse(data);
           if ($.signindex.code == 0 && $.signindex.data.finished == true) {
             console.log(`【签到查询】：已签到,已连续签到${$.signindex.data.continuousDays.length}天\n`);
