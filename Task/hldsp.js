@@ -153,7 +153,7 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.data !== 0){
-        console.log('\n哈喽短视频[领取视频红包]回执:成功🌝 \n获得视频奖励: '+result.data+'等待20秒继续领取')
+        console.log('\n哈喽短视频[领取视频红包]回执:成功🌝 \n获得视频奖励: '+result.data+'，等待20秒继续领取')
            await $.wait(20000);
            await hldspsp();
        
