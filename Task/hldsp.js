@@ -115,8 +115,9 @@ if (
           hldsphd = hldsphdArr[i];
           $.index = i + 1;
           console.log(`\n开始【哈喽短视频${$.index}】`)
-          //await hldsphhb();
+
             await hldspqd();
+	await hldsphhb();
             
   }
 }}
