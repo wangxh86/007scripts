@@ -10,7 +10,7 @@
 
 下载地址 
 
-https://ss.tblk.me/L8UkS
+https://ss.tblk.me/amlHv
 
 二维码地址 https://raw.githubusercontent.com/age174/-/main/4705AE1B-41ED-4341-9CCD-5E06F3372D30.jpeg
 
