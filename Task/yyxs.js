@@ -354,8 +354,10 @@ let url = {
          const result = JSON.parse(data)
         if (result.code == 0) {
         console.log('\n阅友小说阅读计时奖励回执:成功🌝 获得:'+result.data+'金币') 
-          await yyxsjs();
+	 if (result.data == '0') return;
+          
           await $.wait(1000);
+	  await yyxsjs();
         } else {
        
        console.log('\n阅友小说阅读计时奖励回执:失败🚫 '+result.msg) 
@@ -390,8 +392,9 @@ let url = {
     
         if(result.code == 0){
           console.log('\n阅友小说视频奖励领取回执:成功🌝') 
-           await yyxssp();
+           
            await $.wait(3000);
+	   await yyxssp();
 } else {
 console.log('\n阅友小说视频奖励领取回执:失败🚫 '+result.msg)
 }
