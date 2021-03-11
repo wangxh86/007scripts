@@ -172,8 +172,7 @@ function getcash() {
         }
         $.get(url, async(error, resp, data) => {
             let cashres = JSON.parse(data)
-            $.log("现金响应: ")
-            $.log(cashres)
+            $.log("现金响应: "+data)
             if (cashres.apiCode == 10000) {
                 signcash = " " + cashres.data.header[0].title + cashres.data.header[0].value + "元"
             }
