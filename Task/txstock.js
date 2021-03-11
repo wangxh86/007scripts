@@ -1003,7 +1003,7 @@ async function userhome() {
         } else {
           if (safeGet(data)) {
             money = JSON.parse(data);
-            //console.log(money);
+            console.log(money);
             $.log(`【账户金币】:${money.icon_amount}金币\n`);
             tz += `【账户金币】:${money.icon_amount}金币\n`;
           }
