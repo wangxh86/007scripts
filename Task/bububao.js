@@ -960,7 +960,7 @@ function cy_sp(timeout = 0) {
                     $.cy_sp = JSON.parse(data);
                     if ($.cy_sp.code == 1) {
                         console.log(`答题前置：${$.cy_sp.msg}\n`);
-                        $.message += `【答题前置】：${$.cy_sp.msg}\n`;
+                        //$.message += `【答题前置】：${$.cy_sp.msg}\n`;
                         await cy_click() //答题                                         
                     }
                 } catch (e) {
@@ -1080,7 +1080,7 @@ function sleep_info(timeout = 0) {
                     }
                     if ($.sleep_info.is_sleep == 0) {
                         console.log(`睡觉状态：清醒中\n`);
-                        $.message += `【睡觉状态】：清醒中\n`;
+                        //$.message += `【睡觉状态】：清醒中\n`;
                         if (nowTimes.getHours() === 0) {
                             await sleep_start()
                         }
