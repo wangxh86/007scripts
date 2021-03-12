@@ -104,7 +104,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
     timeZone = new Date().getTimezoneOffset() / 60;  //时区
     console.log(`\n 时区： ${timeZone}\n`);
     timestamp = Date.now() + (8 + timeZone) * 60 * 60*1000;  //时间戳
-    timestamp2 =  new Date(new Date(timestamp).toLocaleDateString()).getTime()  //北京时间当天0点时间戳
+    timestamp2 =  new Date(new Date(timestamp).toLocaleDateString()).getTime() - (8 + timeZone) * 60 * 60*1000;   //北京时间当天0点时间戳
     console.log(`\n 时间戳： ${timestamp}\n`);
     console.log(`\n 时间戳2： ${timestamp2}\n`);
     bjTime = new Date(timestamp).toLocaleString('zh', {hour12: false,timeZoneName: 'long'}); //标准北京时间
