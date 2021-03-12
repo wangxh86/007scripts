@@ -989,7 +989,7 @@ async function userhome() {
         'Content-Type': `application/x-www-form-urlencoded`,
         'Referer': `http://zixuanguapp.finance.qq.com`,
         'Host': `wzq.tenpay.com`,
-        'User-Agent': `QQStock/8.7.1 (iPhone; iOS 14.1; Scale/2.00)`,
+        'User-Agent': `QQStock/8.8.1 (iPhone; iOS 14.3; Scale/2.00))`,
         'Accept-Encoding': `gzip,deflate`,
         'Accept-Language': `zh-Hans-CN;q=1`
       },
