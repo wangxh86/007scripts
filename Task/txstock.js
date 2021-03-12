@@ -1001,7 +1001,9 @@ async function userhome() {
           console.log(JSON.stringify(err));
           $.logErr(err);
         } else {
+           console.log(data);
           if (safeGet(data)) {
+            console.log(data);
             money = JSON.parse(data);
             console.log(money);
             $.log(`【账户金币】:${money.icon_amount}金币\n`);
