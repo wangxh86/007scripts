@@ -102,9 +102,8 @@ if (isGetCookie = typeof $request !== 'undefined') {
         return;
     }
     timeZone = new Date().getTimezoneOffset() / 60;  //时区
-    console.log(`\n 时区： ${timesZone}\n`);
+    console.log(`\n 时区： ${timeZone}\n`);
     timestamp = Date.now() + (8 + timeZone) * 60 * 60*1000;  //时间戳
-    //timestamp = new Date(new Date().toLocaleDateString()).getTime() + (8 + timeZone) * 60 * 60*1000;  //北京时间当天0点时间戳
     timestamp2 =  new Date(new Date(timestamp).toLocaleDateString()).getTime()  //北京时间当天0点时间戳
     console.log(`\n 时间戳： ${timestamp}\n`);
     bjTime = new Date(timestamp).toLocaleString('zh', {hour12: false,timeZoneName: 'long'}); //标准北京时间
@@ -272,7 +271,7 @@ function cashlist() {
             console.log(`提现列表: ${data}`)
             if (result.errCode == 0) {
                 for (s = 0; s < result.data.length; s++) {
-                    if (result.data[s].type == '2' && result.data[s].ctime >= parseInt(timestamp/1000)) {
+                    if (result.data[s].type == '2' && result.data[s].ctime >= parseInt(timestamp2/1000)) {
                         cashres = `✅ 今日提现:` + result.data[s].amount / 100 + `元 `
                     }
                 }
