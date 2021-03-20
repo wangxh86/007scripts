@@ -354,7 +354,7 @@ async function all() {
         }
 
         console.log(`${GXRZ}\n`);
-        $.message += `${GXRZ}\n`
+        //$.message += `${GXRZ}\n`
 
     }
 }
@@ -464,7 +464,7 @@ function home(timeout = 0) {
                     $.home = JSON.parse(data);
                     if ($.home.right_jinbi) {
                         console.log(`首页信息：金币：${$.home.right_jinbi}金币,红包：${$.home.hb_jinbi}金币\n`);
-                        $.message += `【首页信息】：金币：${$.home.right_jinbi}金币,红包：${$.home.hb_jinbi}金币\n`;
+                        //$.message += `【首页信息】：金币：${$.home.right_jinbi}金币,红包：${$.home.hb_jinbi}金币\n`;
                         if ($.home.right_time) {
                             console.log(`金币等待：${$.home.right_time}秒\n`);
                             $.message += `【金币等待】：${$.home.right_time}秒\n`;
@@ -1423,7 +1423,7 @@ function h5_list(timeout = 0) {
                         await h5_news() //看看赚执行
                     } else {
                         console.log(`看看赚：已完成\n`);
-                        $.message += `【看看赚】：已完成\n`;
+                        //$.message += `【看看赚】：已完成\n`;
                     }
                 } catch (e) {
                     $.logErr(e, resp);
