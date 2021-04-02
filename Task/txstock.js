@@ -345,7 +345,8 @@ async function cashorder(cash, money) {
     await cashticket(); //申请票据
     console.log(`开始申请提现1元...`)
     await getcash1(cashticket);
-  } else if (cash == 5 && money.icon_amount > 48000){
+  //} else if (cash == 5 && money.icon_amount > 48000){
+  } else if (cash == 5 ){
     console.log(`开始申请票据...`)
     await cashticket(); //申请票据
     console.log(`开始申请提现5元...`)
@@ -762,6 +763,7 @@ function cashticket() {
           if (safeGet(data)) {
             if (logs == 1) $.log(data)
             data = JSON.parse(data);
+            $.log(data)
             $.log(`本次验证时间🕐：` + time(rndtime));
             $.log(`本次验证票据🎫：${data.ticket}\n`);
             cashticket = data.ticket
