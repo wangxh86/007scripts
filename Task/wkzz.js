@@ -121,7 +121,7 @@ if (
   }
     //let acList = wkzz.filter(o => o.id && o.hd).map((o, i) => ({no: i + 1, id: o.id, url: o.url, hd: o.hd}))
     $.log(`------------- 共${wkzzhdArr.length}个账号-------------\n`)
-    for (let i = 0; i < wzkkhdArr.length; i++) {
+    for (let i = 0; i < wkzzhdArr.length; i++) {
       wkzzurl = wkzzurlArr[i]
       wkzzhd = wkzzhdArr[i]
       $.log(`\n开始【微客众智${i + 1}】`)
