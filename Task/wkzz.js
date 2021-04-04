@@ -120,7 +120,7 @@ if (
 	
   }
     //let acList = wkzz.filter(o => o.id && o.hd).map((o, i) => ({no: i + 1, id: o.id, url: o.url, hd: o.hd}))
-    $.log(`------------- 共${wzkkhdArr.length}个账号-------------\n`)
+    $.log(`------------- 共${wkzzhdArr.length}个账号-------------\n`)
     for (let i = 0; i < wzkkhdArr.length; i++) {
       wkzzurl = wkzzurlArr[i]
       wkzzhd = wkzzhdArr[i]
