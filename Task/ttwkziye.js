@@ -112,9 +112,9 @@ if ($.isNode()) {
     wksy = `【天天挖矿】❌ 未获取Cooiekie`
     };
     $.msg($.name, wksign,wksy)//手机js通知项   wksign   headerbag   docard
-  if ($.isNode()) {
-       await notify.sendNotify($.name,wksign + wksy)//git通知项   wksign   headerbag   docard
-     }
+  //if ($.isNode()) {
+  //     await notify.sendNotify($.name,wksign + wksy)//git通知项   wksign   headerbag   docard
+ //    }
    }
   }
 })()
@@ -166,12 +166,15 @@ function getsign() {
        }
      else if (result.code == 40101){
          wksign = `【天天挖矿】 挖矿失败, 原因:${result.message}\n`
+	 if ($.isNode()) {
+         await notify.sendNotify($.name, wksign)
+           }//git通知项
        }
      else {
          wksign = `【天天挖矿】 挖矿失败, 原因:`+result.errmsg
          $.msg($.name, wksign, ``)
        if ($.isNode()) {
-         //await notify.sendNotify($.name, wksign)
+         await notify.sendNotify($.name, wksign)
            }//git通知项
          return
         }
@@ -211,8 +214,7 @@ function getsy() {
          wksy = `【挖矿收益】 挖矿失败, 原因:`+result.errmsg
          $.msg($.name, wksy, ``)
        if ($.isNode()) {
-         //await notify.sendNotify($.name, wksy)
-	  //message += wksy
+         await notify.sendNotify($.name, wksy)
            }//git通知项
          return
         }
