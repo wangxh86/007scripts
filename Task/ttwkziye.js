@@ -113,7 +113,7 @@ if ($.isNode()) {
     };
     $.msg($.name, wksign,wksy)//手机js通知项   wksign   headerbag   docard
   if ($.isNode()) {
-       await notify.sendNotify($.name+ wksign,wksy)//git通知项   wksign   headerbag   docard
+       await notify.sendNotify($.name,wksign + wksy)//git通知项   wksign   headerbag   docard
      }
    }
   }
@@ -171,7 +171,7 @@ function getsign() {
          wksign = `【天天挖矿】 挖矿失败, 原因:`+result.errmsg
          $.msg($.name, wksign, ``)
        if ($.isNode()) {
-         await notify.sendNotify($.name, wksign)
+         //await notify.sendNotify($.name, wksign)
            }//git通知项
          return
         }
