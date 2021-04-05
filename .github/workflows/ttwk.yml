@@ -3,7 +3,7 @@ name: 支付宝挖矿
 on:
   workflow_dispatch:
   schedule:
-     - cron: '15 0 * * *'
+     - cron: '2 16 * * *'
   watch:
     types: started
 jobs:
