@@ -376,6 +376,9 @@ let url = {
         if(result.code == 0){
 
         console.log('\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
+	 if ($.isNode()) {
+                    await notify.sendNotify($.name, '\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
+                }
 if(result.data.point >=100){
 $.log('西梅-检测到当前梅子可提现,执行提现任务')
 await ximeitx();
@@ -383,6 +386,9 @@ await ximeitx();
         
 } else {
        console.log('\n西梅用户信息获取失败  '+result.msg)
+	if ($.isNode()) {
+                    await notify.sendNotify($.name, '\n西梅用户信息获取失败  '+result.msg)
+                }
 }
    
         } catch (e) {
@@ -411,11 +417,14 @@ let url = {
         if(result.code == 0){
 
         console.log('\n西梅提现成功:'+result.data.order_status)
+	
 
         
 } else {
        console.log('\n西梅提现失败  '+result.msg)
-
+	if ($.isNode()) {
+                    await notify.sendNotify($.name, '\n西梅提现失败  '+result.msg)
+                }
 }
    
         } catch (e) {
