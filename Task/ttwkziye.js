@@ -49,7 +49,7 @@ const $ = new Env('支付宝天天挖矿')//js名字 支付宝天天挖矿
 
 const notify = $.isNode() ? require('./sendNotify') : '';
 let bodyArr = [],headerArr = [];//定义Secret设置 合集
-
+let message = '';
 if (isGetCookie = typeof $request !==`undefined`) {
    GetCookie();
    $.done()   //cookie获取判定
@@ -105,7 +105,7 @@ if ($.isNode()) {
       $.index = i + 1;
       console.log(`\n开始【天天挖矿${$.index}】`)
 	console.log(bodyVal)    
-     //await getsign();
+     await getsign();
  if (headerVal !== undefined){
      await getsy();
     } else {
@@ -196,9 +196,9 @@ function getsy() {
      $.post(syurl, async(error, response, data) => {
      let result = JSON.parse(data)
      console.log(result)
-     if (result.data.hasSign === 'false') {
-	     await getsign()
-     }
+     //if (result.data.hasSign === 'false') {
+	//     await getsign()
+     //}
      if (result.code == 200){
          wksy = '【挖矿收益】账户总收益:'+result.data.cumulativeMoney/100+`元💰\n【挖矿记录】连续挖矿${result.data.numberInRounds}天,总计挖矿${result.data.cumulativeSignCount}天\n`
          }  
@@ -211,7 +211,8 @@ function getsy() {
          wksy = `【挖矿收益】 挖矿失败, 原因:`+result.errmsg
          $.msg($.name, wksy, ``)
        if ($.isNode()) {
-         await notify.sendNotify($.name, wksy)
+         //await notify.sendNotify($.name, wksy)
+	  //message += wksy
            }//git通知项
          return
         }
