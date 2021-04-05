@@ -18,7 +18,7 @@ jobs:
     env:
       URL: "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.js"
       RUNFILE: "Task/QQread.js"      
-      XIMEURL: ${{ secrets.XIMEIURL }}
+      XIMEIURL: ${{ secrets.XIMEIURL }}
       XIMEIHD: ${{ secrets.XIMEIHD }}
       PUSH_KEY: ${{ secrets.PUSH_KEY }}
       BARK_PUSH: ${{ secrets.BARK_PUSH }}
