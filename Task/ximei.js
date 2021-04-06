@@ -58,6 +58,9 @@ hostname = app.hubonews.com
 */
 
 const $ = new Env('西梅');
+
+const notify = $.isNode() ? require("./sendNotify") : ``;
+
 let status;
 status = (status = ($.getval("ximeistatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const ximeiurlArr = [], ximeihdArr = [],ximeicount = ''
