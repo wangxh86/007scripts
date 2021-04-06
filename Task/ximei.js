@@ -68,7 +68,7 @@ let times = Math.round(Date.now())
 let ximeiurl = $.getdata('ximeiurl')
 let ximeihd = $.getdata('ximeihd')
 let st = '@123hb#*^&xiMEI99'
-let ximeikey = '',id = '',uid='',tid='',name=''
+let ximeikey = '',id = '',uid='',tid='',name='', message = ''
 !(async () => {
   if (typeof $request !== "undefined") {
     await ximeick()
@@ -131,7 +131,11 @@ if (
           
 
   }
-}}
+}
+  if ($.isNode()) {
+                 await notify.sendNotify($.name, message)
+                }
+  }
 
 })()
   .catch((e) => $.logErr(e))
@@ -380,7 +384,8 @@ let url = {
 
         console.log('\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
 	 if ($.isNode()) {
-                    await notify.sendNotify($.name, '\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
+                    //await notify.sendNotify($.name, '\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
+		 message += '\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin
                 }
 if(result.data.point >=100){
 $.log('西梅-检测到当前梅子可提现,执行提现任务')
