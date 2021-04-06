@@ -159,7 +159,7 @@ function getsign() {
      let result = JSON.parse(data)
      console.log(result)
      if (result.data.success == 'true'){
-         wksign = '【天天挖矿】✅ 挖矿成功, 收益:'+result.amount/100+'元💰\n'
+         wksign = '【天天挖矿】✅ 挖矿成功, 收益:'+result.data.amount/100+'元💰\n'
          }  
      else if (result.data.success == 'false'){
          wksign = `【天天挖矿】 重复挖矿\n`
