@@ -1786,7 +1786,8 @@ function tixian(timeout = 0) {
             $.post(url, async (err, resp, data) => {
                 try {
                     if (logs) $.log(`${O}, 现金提现🚩: ${decodeUnicode(data)}`);
-                    $.tixian = JSON.parse(data);
+                 $.log(`${O}, 现金提现🚩: ${decodeUnicode(data)}`);   
+                 $.tixian = JSON.parse(data);
                     if ($.tixian.code == 1) {
                         console.log(`现金提现：${$.tixian.msg}\n`);
                         $.message += `【现金提现】：${$.tixian.msg}\n`;
