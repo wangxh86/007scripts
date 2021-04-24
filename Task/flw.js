@@ -1,8 +1,8 @@
 /* ziye 
-github地址 https://github.com/6Svip120apk69
+github地址 https://github.com/ziye888
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
-boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/ziye.boxjs.json
+boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.json
 转载请备注个名字，谢谢
 
 ⚠️返利网
@@ -20,13 +20,14 @@ boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThx
 2.17-2 修改判定，进文章直接获取body,修复判定
 3.3 去除阅读提现，请手动提现
 3.8 替换为循环获取ck
+3.17 适配返利网
 
 ⚠️返利网实名  验证码接不到  可以稍后再试，或者联系客服，或者等第二天， 姓名务必与支付宝姓名一致，其他可以乱写       但是已经填写身份证号后想要换个实名，务必输入原身份证号，    1个支付宝只可以绑定3个返利网
 
 
 ⚠️一共5个位置 5个ck  👉 6条 Secrets 
 多账号换行
-第一步 添加  hostname=huodong.fanli.com,passport.fanli.com,gw.fanli.com,
+第一步 添加  hostname=*.fanli.com,
 
 第二步 添加重写 
 
@@ -54,26 +55,26 @@ flwydbodyVal 👉FL_flwydBODY
 
 
 ⚠️主机名以及重写👇
-hostname=huodong.fanli.com,passport.fanli.com,gw.fanli.com,
+hostname=*.fanli.com,
 
 ############## 圈x
 #返利网获取header
-https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) url script-request-header https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js   
+https:\/\/.+\.fanli\.com\/* url script-request-header https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js   
 #返利网获取body
-https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js   
+https:\/\/.+\.fanli\.com\/* url script-request-body https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js   
 
 ############## loon
 #返利网获取header
-http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js, requires-header=true, tag=返利网获取header
+http-request https:\/\/.+\.fanli\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js, requires-header=true, tag=返利网获取header
 
-http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js,requires-body=1,max-size=0, tag=返利网获取body
+http-request https:\/\/.+\.fanli\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js,requires-body=1,max-size=0, tag=返利网获取body
 
 ############## surge
 #返利网获取header
-返利网获取header = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js
+返利网获取header = type=http-request,pattern=https:\/\/.+\.fanli\.com\/*,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js
 
 #返利网获取body
-返利网获取body = type=http-request,pattern=https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/flw.js
+返利网获取body = type=http-request,pattern=https:\/\/.+\.fanli\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js
 
 
 
@@ -591,7 +592,7 @@ async function all() {
         }
         await flwtask(); //任务列表	  
         if ($.flwtask.data && qw.status == 0) {
-            dd = qw.new_point / 2
+            dd = qw.new_point * 2
         } else if ($.flwtask.data && $.flwtask.data && sp.complete_count != 7) {
             dd = (7 - sp.complete_count) * 2
         }
@@ -1038,7 +1039,7 @@ function flwlsp(timeout = 0) {
 function flwqw(timeout = 0) {
     return new Promise((resolve) => {
         setTimeout(() => {
-            for (let i = 0; i < 200; i++) {
+            for (let i = 0; i < 100; i++) {
                 $.index = i + 1
                 setTimeout(() => {
                     flwqwurlVal = `https://gw.fanli.com/app/v1/videofeed/report.htm?uid=${uid}&token=${token}&nonce=&t=${ts()}&pageType=0&sn=${sn}&src=1&v=7.16.6.1&abtest=${abtest}`
@@ -1052,7 +1053,7 @@ function flwqw(timeout = 0) {
                             if (logs) $.log(`${O}, 趣味视频🚩: ${data}`);
                             $.flwqw = JSON.parse(data);
                             if ($.flwqw.status && $.flwqw.status == 1) {
-                                console.log(`已观看第${i+1}次趣味视频，共领取${(i+1)*2}金币\n`);
+                                console.log(`已观看第${i+1}次趣味视频，共领取${(i+1)}金币\n`);
                             }
                         } catch (e) {
                             $.logErr(e, resp);
@@ -1060,7 +1061,7 @@ function flwqw(timeout = 0) {
                             resolve()
                         }
                     })
-                }, i * 1000);
+                }, i * 2000);
             }
         }, timeout)
     })
