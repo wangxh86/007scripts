@@ -489,11 +489,12 @@ let url = {
         if (result.code == 0) {
          // console.log(data)
           console.log('\n阅友小说用户信息回执:成功🌝 \n\n------------- 当前账号信息 -------------\n用户id:'+result.data.uc.User.id+'\n金币数:'+result.data.uc.User.acctInfo.coins+'个，约等于:'+result.data.uc.User.acctInfo.coins / 10000+'元\n'+result.data.uc.dailyMsg+'\n'+result.data.uc.totalMsg);
-          await notify.sendNotify( `阅友小说${$.index}🔔`, '【微信号】：'+result.data.uc.User.wechatNickName+'\n【用户id】：'+result.data.uc.User.id+'\n【金币数】：'+result.data.uc.User.acctInfo.coins+'个，约等于: '+result.data.uc.User.acctInfo.coins / 10000+'元\n'+'【阅读时长】：'+result.data.uc.dailyMsg+'，'+result.data.uc.totalMsg); 
+          //await notify.sendNotify( `阅友小说${$.index}🔔`, '【微信号】：'+result.data.uc.User.wechatNickName+'\n【用户id】：'+result.data.uc.User.id+'\n【金币数】：'+result.data.uc.User.acctInfo.coins+'个，约等于: '+result.data.uc.User.acctInfo.coins / 10000+'元\n'+'【阅读时长】：'+result.data.uc.dailyMsg+'，'+result.data.uc.totalMsg); 
            
         } else {
        
        console.log('\n阅友小说用户信息回执:失败🚫 '+msg) 
+	await notify.sendNotify( `阅友小说${$.index}🔔`, 'Cookie失效，请重新获取！！！');
         }} catch (e) {
           $.logErr(e, resp);
         } finally {
