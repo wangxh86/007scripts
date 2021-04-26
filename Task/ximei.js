@@ -132,9 +132,11 @@ if (
 
   }
 }
-  if ($.isNode()) {
+  /*
+	  if ($.isNode()) {
                  await notify.sendNotify($.name, message)
                 }
+*/
   }
 
 })()
