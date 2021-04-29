@@ -26,14 +26,40 @@ if (isGetCookie) {
    $.done()
 } 
 
+   if ($.isNode()) {
+  COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
+  console.log(
+    `============ cookies分隔符为：${JSON.stringify(
+      COOKIES_SPLIT
+    )} =============\n`
+  );
+
+  if (
+    process.env.KXHYHEADER &&
+    process.env.KXHYHEADER.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    kxhyheader = process.env.KXHYHEADER.split(COOKIES_SPLIT);
+  } else {
+    kxhyheader = process.env.KXHYHEADER.split();
+  }
+
+    Object.keys(kxhyheader).forEach((item) => {
+        if (kxhyheader[item]) {
+          kxhyheaderArr.push(kxhyheader[item])
+        }
+    });
+  	
+  } else {
 kxhyheaderArr.push($.getdata('kxhyheader'))
     let kxhycount = ($.getval('kxhycount') || '1');
   for (let i = 2; i <= kxhycount; i++) {
     kxhyheaderArr.push($.getdata(`kxhyheader${i}`))
   }
+  }
 !(async () => {
 if (!kxhyheaderArr[0]) {
     $.msg($.name, '【提示】请先获取开心花园一cookie')
+    await notify.sendNotify($.name, '【提示】请先获取开心花园一cookie')
     return;
   }
    console.log(`------------- 共${kxhyheaderArr.length}账号----------------\n`)
@@ -416,7 +442,8 @@ async function havest(){
 async function showmsg() {
     if (tz == 1) {
       if ($.isNode()) {
-        if ((hour == 12 && minute <= 20) || (hour == 23 && minute >= 40)) {
+        if ((hour == 23 && minute >= 40)) {
+          $.log(message)
           await notify.sendNotify($.name, message)
         } else {
           $.log(message)
