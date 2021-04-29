@@ -326,6 +326,8 @@ function user(timeout = 0) {
           if ($.user.code == 0) {
             console.log(`\n${O}\n========== 【${$.user.nick}】 ==========\n`);
             $.message += `\n${O}\n========== 【${$.user.nick}】 ==========\n`;
+          } else {
+          await notify.sendNotify(O, `Cookie已失效，请重新获取！`);
           }
         } catch (e) {
           $.logErr(e, resp);
