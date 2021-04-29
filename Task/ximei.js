@@ -180,7 +180,7 @@ let url = {
         if(result.code == 0){
 id = result.data[0].data.articleId
 name = result.data[0].data.translatedTitle
-        console.log(`\n西梅获取文章列表成功\n文章ID:${id}\n文章标题:${name}\n执行点赞任务`)
+        console.log(`\n西梅获取文章列表成功\n文章ID:${id}\n文章标题:${name}\n执行阅读任务`)
 
 
 //await ximeidz();
@@ -287,7 +287,7 @@ let url = {
         if(result.code == 0){
 
         console.log('\n西梅阅读成功,获得梅子:'+result.data.point)
-        await $.wait(1000);
+        await $.wait(10000);
         //await ximeisp();
 	 await ximei1();
 } else {
